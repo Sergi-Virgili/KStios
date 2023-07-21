@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "question": "What is the capital of France?",
+      "answers": [
+        {
+          "answer": "Paris",
+          "correct": true,
+          "explanation": "Paris is the capital of France"
+        },
+        {
+          "answer": "London",
+          "correct": false,
+          "explanation": "London is the capital of England"
+        },
+        {
+          "answer": "Berlin",
+          "correct": false,
+          "explanation": "Berlin is the capital of Germany"
+        },
+        {
+          "answer": "Madrid",
+          "correct": false,
+          "explanation": "Madrid is the capital of Spain"
+        }
+      ]
+    },
+    {
+      "question": "What is the capital of England?",
+      "answers": [
+        {
+          "answer": "Eiii",
+          "correct": false,
+          "explanation": "Paris is the capital of France"
+        },
+        {
+          "answer": "London",
+          "correct": true,
+          "explanation": "London is the capital of England"
+        },
+        {
+          "answer": "Berlin",
+          "correct": false,
+          "explanation": "Berlin is the capital of Germany"
+        },
+        {
+          "answer": "Madrid",
+          "correct": false,
+          "explanation": "Madrid is the capital of Spain"
+        }
+      ]
+    }
+  ]
+}
