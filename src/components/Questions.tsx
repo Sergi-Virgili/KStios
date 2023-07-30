@@ -1,22 +1,24 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { IQuestion } from "../types";
 import { fetchInitQuestions } from "../services/QuestionServices";
 import { Question } from "../domain/Question";
 import Answer from "../domain/Answer";
+import QuestionCard from "./QuestionCard";
+import QuestionCounter from "./QuestionCounter";
 
 function Questions() {
   const [questions, setQuestions] = useState<Question[]>([]);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [questionNumber, setCurrentQuestion] = useState(0);
   const [correctionMode, setCorrectionMode] = useState(false);
 
+  const actualQuestion = questions[questionNumber];
+
   const handlePrev = () => {
-    if (currentQuestion > 0) setCurrentQuestion(currentQuestion - 1);
+    if (questionNumber > 0) setCurrentQuestion(questionNumber - 1);
   };
 
   const handleNext = () => {
-    if (currentQuestion < questions.length - 1)
-      setCurrentQuestion(currentQuestion + 1);
+    if (questionNumber < questions.length - 1)
+      setCurrentQuestion(questionNumber + 1);
   };
   useEffect(() => {
     fetchInitQuestions().then((data) => {
@@ -26,8 +28,8 @@ function Questions() {
 
   useEffect(() => {
     if (questions.length === 0) return;
-    setCorrectionMode(questions[currentQuestion].isSubmitted);
-  }, [currentQuestion]);
+    setCorrectionMode(questions[questionNumber].isSubmitted);
+  }, [questionNumber]);
 
   const handleCheck = (answer: Answer) => {
     answer.checkAnswer();
@@ -35,7 +37,7 @@ function Questions() {
   };
 
   const handleSubmit = () => {
-    questions[currentQuestion].submit();
+    questions[questionNumber].submit();
     setCorrectionMode(true);
   };
 
@@ -55,49 +57,24 @@ function Questions() {
   if (questions.length === 0) return <h2>Loading...</h2>;
   return (
     <>
-      <article className="card">
-        {resultAvise()}
-        <h2>Pregunta {currentQuestion + 1}</h2>
-        <p>
-          {questions[currentQuestion].question}{" "}
-          {questions[currentQuestion].numberOfCorrectAnswers()}
-        </p>
-        <ul>
-          {questions[currentQuestion].answers.map((x, index) => (
-            <li
-              key={index}
-              style={{
-                backgroundColor: answerStyle(x),
-              }}
-            >
-              <input
-                type="checkbox"
-                checked={x.isChecked}
-                onChange={() => handleCheck(x)}
-                name="{index}"
-                id={index.toString()}
-              />
-              {x.answer}
-            </li>
-          ))}
-        </ul>
-        <button onClick={handleSubmit}>Submit</button>
-      </article>
+      <QuestionCounter
+        questionNumber={questionNumber + 1}
+        questionsTotal={questions.length}
+      ></QuestionCounter>
+      <QuestionCard
+        actualQuestion={actualQuestion}
+        correctionMode={correctionMode}
+        questionNumber={questionNumber}
+        answerStyle={answerStyle}
+        handleSubmit={handleSubmit}
+        handleCheck={handleCheck}
+      ></QuestionCard>
       <section>
         <button onClick={handlePrev}>Prev</button>
         <button onClick={handleNext}>Next</button>
       </section>
     </>
   );
-
-  function resultAvise() {
-    if (!correctionMode) return "";
-    return questions[currentQuestion].isQuestionCorrect() ? (
-      <p>OK</p>
-    ) : (
-      <p>FAILED</p>
-    );
-  }
 }
 
 export default Questions;
