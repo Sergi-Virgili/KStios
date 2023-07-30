@@ -1,13 +1,13 @@
 export interface Questions {
-  questions: Question[];
+  questions: IQuestion[];
 }
 
-export interface Question {
+export interface IQuestion {
   question: string;
-  answers: Answer[];
+  answers: IAnswer[];
 }
 
-export interface Answer {
+export interface IAnswer {
   answer: string;
   correct: boolean;
   explanation: string;
