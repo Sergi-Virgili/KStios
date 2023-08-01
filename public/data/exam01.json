@@ -1,53 +1,115 @@
 {
   "questions": [
     {
-      "question": "What is the capital of France?",
+      "question": "Una organización ha decidido comprar una instancia reservada (RI) de Amazon EC2 durante tres años para reducir los costes. Es posible que las cargas de trabajo de la aplicación cambien durante el período de reserva.\n\n¿Cuál es el tipo de instancia reservada (RI) de EC2 que permitirá a la empresa intercambiar la instancia reservada comprada por otra instancia reservada con mayor potencia de cálculo si es necesario?",
+      "answers": [
+        { "answer": "RI elástico", "correct": false, "explanation": "" },
+        { "answer": "Premium RI", "correct": false, "explanation": "" },
+        { "answer": "RI estándar", "correct": false, "explanation": "" },
+        { "answer": "Convertible RI", "correct": true, "explanation": "" }
+      ]
+    },
+    {
+      "question": "¿Qué proporciona AWS Snowball? (Elija DOS)",
       "answers": [
         {
-          "answer": "Paris",
-          "correct": true,
-          "explanation": "Paris is the capital of France"
-        },
-        {
-          "answer": "London",
+          "answer": "Un catálogo de soluciones de software de terceros que los clientes necesitan para crear soluciones y administrar sus negocios",
           "correct": false,
-          "explanation": "London is the capital of England"
+          "explanation": ""
         },
         {
-          "answer": "Berlin",
+          "answer": "Transferencia segura de grandes cantidades de datos dentro y fuera de la nube de AWS",
           "correct": true,
-          "explanation": "Berlin is the capital of Germany"
+          "explanation": ""
         },
         {
-          "answer": "Madrid",
+          "answer": "Un almacenamiento en la nube híbrida entre entornos locales y la nube de AWS",
           "correct": false,
-          "explanation": "Madrid is the capital of Spain"
+          "explanation": ""
+        },
+        {
+          "answer": "Capacidades informáticas integradas que permiten a los clientes procesar datos localmente",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Un servicio de transferencia de datos a escala de exabytes que le permite mover cantidades extremadamente grandes de datos a AWS",
+          "correct": false,
+          "explanation": ""
         }
       ]
     },
     {
-      "question": "What is the capital of England?",
+      "question": "¿Qué es el servicio de AWS que proporciona una red virtual dedicada a su cuenta de AWS?",
+      "answers": [
+        { "answer": "AWS VPN", "correct": false, "explanation": "" },
+        {
+          "answer": "Subredes de AWS (AWS Subnets)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Hosts dedicados de AWS (AWS Dedicated Hosts)",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "Amazon VPC", "correct": true, "explanation": "" }
+      ]
+    },
+    {
+      "question": "¿Qué utiliza Amazon CloudFront para distribuir contenido a usuarios globales con baja latencia?",
       "answers": [
         {
-          "answer": "Eiii",
-          "correct": false,
-          "explanation": "Paris is the capital of France"
-        },
-        {
-          "answer": "London",
+          "answer": "Ubicaciones de borde de AWS (AWS Edge Locations)",
           "correct": true,
-          "explanation": "London is the capital of England"
+          "explanation": ""
         },
         {
-          "answer": "Berlin",
+          "answer": "Zonas de disponibilidad de AWS (AWS Availability Zones)",
           "correct": false,
-          "explanation": "Berlin is the capital of Germany"
+          "explanation": ""
         },
+        { "answer": "AWS Regions", "correct": false, "explanation": "" },
         {
-          "answer": "Madrid",
+          "answer": "AWS Global Accelerator",
           "correct": false,
-          "explanation": "Madrid is the capital of Spain"
+          "explanation": ""
         }
+      ]
+    },
+    {
+      "question": "¿Cuál de las siguientes opciones ayuda a un cliente a ver la actividad de facturación de Amazon EC2 durante el último mes?",
+      "answers": [
+        {
+          "answer": "Informes de costos y uso de AWS (AWS Cost & Usage Reports)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Administrador de sistemas de AWS (AWS Systems Manager)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Presupuestos de AWS(AWS Budgets)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Calculadora de precios de AWS(AWS Pricing Calculator)",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Cientos de miles de ataques DDoS se registran cada mes en todo el mundo. ¿Qué servicio proporciona AWS para ayudar a proteger a los clientes de AWS de estos ataques? (Elija DOS)",
+      "answers": [
+        { "answer": "AWS WAF", "correct": true, "explanation": "" },
+        { "answer": "AWS KMS", "correct": false, "explanation": "" },
+        { "answer": "Amazon Cognito", "correct": false, "explanation": "" },
+        { "answer": "AWS Config", "correct": false, "explanation": "" },
+        { "answer": "AWS Shield", "correct": true, "explanation": "" }
       ]
     }
   ]
