@@ -13,27 +13,27 @@
       "question": "¿Qué proporciona AWS Snowball? (Elija DOS)",
       "answers": [
         {
-          "answer": "Un catálogo de soluciones de software de terceros que los clientes necesitan para crear soluciones y administrar sus negocios",
+          "answer": "[ ] Un catálogo de soluciones de software de terceros que los clientes necesitan para crear soluciones y administrar sus negocios",
           "correct": false,
           "explanation": ""
         },
         {
-          "answer": "Transferencia segura de grandes cantidades de datos dentro y fuera de la nube de AWS",
+          "answer": "[ ] Transferencia segura de grandes cantidades de datos dentro y fuera de la nube de AWS",
           "correct": true,
           "explanation": ""
         },
         {
-          "answer": "Un almacenamiento en la nube híbrida entre entornos locales y la nube de AWS",
+          "answer": "[ ] Un almacenamiento en la nube híbrida entre entornos locales y la nube de AWS",
           "correct": false,
           "explanation": ""
         },
         {
-          "answer": "Capacidades informáticas integradas que permiten a los clientes procesar datos localmente",
+          "answer": "[ ] Capacidades informáticas integradas que permiten a los clientes procesar datos localmente",
           "correct": true,
           "explanation": ""
         },
         {
-          "answer": "Un servicio de transferencia de datos a escala de exabytes que le permite mover cantidades extremadamente grandes de datos a AWS",
+          "answer": "[ ] Un servicio de transferencia de datos a escala de exabytes que le permite mover cantidades extremadamente grandes de datos a AWS",
           "correct": false,
           "explanation": ""
         }
@@ -105,11 +105,1217 @@
     {
       "question": "Cientos de miles de ataques DDoS se registran cada mes en todo el mundo. ¿Qué servicio proporciona AWS para ayudar a proteger a los clientes de AWS de estos ataques? (Elija DOS)",
       "answers": [
-        { "answer": "AWS WAF", "correct": true, "explanation": "" },
-        { "answer": "AWS KMS", "correct": false, "explanation": "" },
-        { "answer": "Amazon Cognito", "correct": false, "explanation": "" },
+        { "answer": "[ ] AWS WAF", "correct": true, "explanation": "" },
+        { "answer": "[ ] AWS KMS", "correct": false, "explanation": "" },
+        { "answer": "[ ] Amazon Cognito", "correct": false, "explanation": "" },
+        { "answer": "[ ] AWS Config", "correct": false, "explanation": "" },
+        { "answer": "[ ] AWS Shield", "correct": true, "explanation": "" }
+      ]
+    },
+    {
+      "question": "¿Qué debe hacer para mantener seguros los datos de los volúmenes de EBS? (Elija DOS)",
+      "answers": [
+        {
+          "answer": "[ ] Almacenar una copia de seguridad diariamente en una unidad externa",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Crear instantáneas (snapshots)de EBS",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Asegúrese de que los datos de EBS estén cifrados en reposo",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Evite cualquier acceso no autorizado a los centros de datos de AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Actualice regularmente el firmware en dispositivos EBS",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Ha implementado su aplicación en varias instancias Amazon EC2. Sus clientes se quejan de que a veces no pueden acceder a su aplicación. ¿Qué servicio de AWS le permite supervisar el rendimiento de sus instancias EC2 para ayudarle a solucionar estos problemas?",
+      "answers": [
+        { "answer": "Amazon CloudWatch", "correct": true, "explanation": "" },
+        { "answer": "AWS CloudTrail", "correct": false, "explanation": "" },
         { "answer": "AWS Config", "correct": false, "explanation": "" },
-        { "answer": "AWS Shield", "correct": true, "explanation": "" }
+        { "answer": "AWS Lambda", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "¿Cuál es el servicio de base de datos de AWS que le permite cargar datos estructurados en formato clave-valor?",
+      "answers": [
+        { "answer": "Amazon Redshift", "correct": false, "explanation": "" },
+        { "answer": "Amazon Aurora", "correct": false, "explanation": "" },
+        { "answer": "Amazon RDS", "correct": false, "explanation": "" },
+        { "answer": "Amazon DynamoDB", "correct": true, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Una empresa se ha trasladado a AWS recientemente. ¿Cuál de los siguientes servicios de AWS ayudará a garantizar que tienen la configuración de seguridad adecuada? (Elija DOS)",
+      "answers": [
+        {
+          "answer": "[ ] AWS Trusted Advisor",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Amazon Inspector",
+          "correct": true,
+          "explanation": ""
+        },
+        { "answer": "[ ] Amazon SNS", "correct": false, "explanation": "" },
+        {
+          "answer": "[ ] Equipo de soporte de conserjería(Concierge Support Team)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Amazon CloudWatch",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Un desarrollador planea crear una aplicación web de dos niveles que tenga una capa de base de datos MySQL. ¿Cuál de los siguientes servicios de base de datos de AWS proporcionaría copias de seguridad automatizadas para la aplicación?",
+      "answers": [
+        { "answer": "Amazon Aurora", "correct": true, "explanation": "" },
+        { "answer": "Amazon Neptune", "correct": false, "explanation": "" },
+        { "answer": "Amazon DynamoDB", "correct": false, "explanation": "" },
+        {
+          "answer": "Una base de datos MySQL instalada en una instancia EC2",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Cuál de las siguientes opciones está relacionada con la confiabilidad de AWS? (Elija DOS)",
+      "answers": [
+        {
+          "answer": "[ ] Aprovisionamiento automático de nuevos recursos para satisfacer la demanda",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Aplicación del principio de privilegios mínimos a todos los recursos de AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Capacidad para recuperarse rápidamente de fallas",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Proporcionar compensación a los clientes si ocurren problemas",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Todos los servicios de AWS se consideran servicios globales y este diseño ayuda a los clientes a atender a sus usuarios internacionales",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Qué proporciona AWS para implementar tecnologías populares, como IBM MQ, en AWS con la menor cantidad de esfuerzo y tiempo?",
+      "answers": [
+        {
+          "answer": "Implementaciones de referencia de AWS Quick Start(AWS Quick Start reference deployments)",
+          "correct": true,
+          "explanation": ""
+        },
+        { "answer": "AWS OpsWorks", "correct": false, "explanation": "" },
+        { "answer": "Amazon Aurora", "correct": false, "explanation": "" },
+        { "answer": "Amazon CloudWatch", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Seleccione DOS ejemplos de los controles compartidos de AWS.",
+      "answers": [
+        {
+          "answer": "[ ] Administración de parches",
+          "correct": true,
+          "explanation": ""
+        },
+        { "answer": "[ ] Gestión de IAM", "correct": false, "explanation": "" },
+        {
+          "answer": "[ ] Administración de VPC",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Operaciones del centro de datos",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Gestión de la configuración",
+          "correct": true,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Cuál de las siguientes opciones NO es correcta con respecto a las instancias bajo demanda de Amazon EC2?",
+      "answers": [
+        {
+          "answer": "Con las instancias bajo demanda, no se necesitan compromisos a más largo plazo ni pagos por adelantado",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Cuando se utilizan instancias de Linux bajo demanda, se le cobra por segundo en función de una tarifa por hora",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Las instancias bajo demanda siguen el modelo de precios de pago por uso de AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Debe pagar una tarifa de inicio al lanzar una nueva instancia por primera vez.",
+          "correct": true,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Una empresa global con un gran número de cuentas de AWS está buscando una forma en la que puedan administrar de forma centralizada las políticas de facturación y seguridad en todas las cuentas. ¿Qué servicio de AWS les ayudará a alcanzar estos objetivos?",
+      "answers": [
+        {
+          "answer": "Organizaciones de AWS (AWS Organizations)",
+          "correct": true,
+          "explanation": ""
+        },
+        { "answer": "AWS Config", "correct": false, "explanation": "" },
+        {
+          "answer": "AWS Trusted Advisor",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "Grupos de IAM", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Con el fin de implementar las mejores prácticas cuando se trata de un \"punto único de falla”(“Single Point of Failure”), debe intentar crear la mayor automatización posible tanto para detectar como para reaccionar ante fallas. ¿Cuál de los siguientes servicios de AWS ayudaría? (Elija DOS)",
+      "answers": [
+        {
+          "answer": "[ ] Escalado automático (Auto Scaling)",
+          "correct": true,
+          "explanation": ""
+        },
+        { "answer": "[ ] ELB", "correct": true, "explanation": "" },
+        { "answer": "[ ] ECR", "correct": false, "explanation": "" },
+        { "answer": "[ ] Amazon Athena", "correct": false, "explanation": "" },
+        { "answer": "[ ] Amazon EC2", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Una organización tiene un gran número de empleados técnicos que operan su infraestructura de nube de AWS. ¿Qué proporciona AWS para ayudar a organizarlos en equipos y, a continuación, asignar los permisos adecuados para cada equipo?",
+      "answers": [
+        { "answer": "Grupos de IAM", "correct": true, "explanation": "" },
+        {
+          "answer": "Organizaciones de AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "Roles de IAM", "correct": false, "explanation": "" },
+        { "answer": "Usuarios de IAM", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "¿Qué servicio se utiliza para garantizar que los mensajes entre los componentes de software no se pierdan si uno o más componentes fallan?",
+      "answers": [
+        { "answer": "Amazon Connect", "correct": false, "explanation": "" },
+        { "answer": "Amazon SQS", "correct": true, "explanation": "" },
+        { "answer": "Amazon SES", "correct": false, "explanation": "" },
+        { "answer": "AWS Direct Connect", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Ha observado que se han terminado varias instancias críticas de Amazon EC2. ¿Cuál de los siguientes servicios de AWS le ayudaría a determinar quién realizó esta acción?",
+      "answers": [
+        {
+          "answer": "AWS Trusted Advisor",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "EC2 Instance Usage Report",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "Amazon Inspector", "correct": false, "explanation": "" },
+        { "answer": "AWS CloudTrail", "correct": true, "explanation": "" }
+      ]
+    },
+    {
+      "question": "¿Cómo puede ver la distribución del gasto de AWS en una de sus cuentas de AWS?",
+      "answers": [
+        {
+          "answer": "Poniéndose en contacto con el equipo de AWS Finance",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Mediante AWS Cost Explorer",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Mediante la consola de Amazon VPC",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Poniéndose en contacto con el equipo de AWS Support",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Qué gana al configurar la facturación consolidada para cinco cuentas de AWS diferentes en otra cuenta maestra?",
+      "answers": [
+        {
+          "answer": "Cada cuenta de AWS obtiene descuentos por volumen",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Los costos de los servicios de AWS se reducirán a la mitad del precio original",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Cada cuenta de AWS obtiene cinco veces la capacidad de los servicios de capa gratuita",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "La función de facturación consolidada es solo para fines organizativos",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Cuál de las siguientes opciones NO pertenece a los modelos de AWS Cloud Computing?",
+      "answers": [
+        {
+          "answer": "Software como servicio (SaaS)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Redes como servicio (NaaS)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Infraestructura como servicio (IaaS)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Plataforma como servicio (PaaS)",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "En el modelo de responsabilidad compartida de AWS, ¿cuál de las siguientes es la responsabilidad del cliente? (Elija DOS)",
+      "answers": [
+        {
+          "answer": "[ ] Control del acceso físico a los recursos informáticos",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Aplicación de parches a la infraestructura de red",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Establecer reglas de complejidad de contraseñas",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Configuración de reglas de acceso a la red",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Eliminación de discos",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Tiene soporte básico de AWS y ha descubierto que algunos recursos de AWS se utilizan de forma malintencionada y esos recursos podrían poner en peligro sus datos. ¿Qué debes hacer?",
+      "answers": [
+        {
+          "answer": "Póngase en contacto con el equipo de servicio al cliente de AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Póngase en contacto con el equipo de seguridad de AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Póngase en contacto con el equipo de AWS Abuse",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Póngase en contacto con el equipo de aws Concierge",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Ajustar la capacidad de cómputo dinámicamente para reducir costos, es una implementación  práctica de la nube de AWS.",
+      "answers": [
+        { "answer": "Paralelizar tareas", "correct": false, "explanation": "" },
+        {
+          "answer": "Adoptar una arquitectura monolítica",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Cree seguridad en cada capa",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Implementar elasticidad",
+          "correct": true,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Desea ejecutar una aplicación de cuestionario durante solo un día (sin interrupción), ¿qué opción de compra de Amazon EC2 debe utilizar?",
+      "answers": [
+        {
+          "answer": "Instancias dedicadas",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Instancias reservadas",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Instancias bajo demanda",
+          "correct": true,
+          "explanation": ""
+        },
+        { "answer": "Spot Instancias", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Una empresa está introduciendo un nuevo producto a sus clientes, y está esperando un aumento en el tráfico a su aplicación web. Como parte de su plan de soporte empresarial, ¿cuál de las siguientes opciones proporciona a la empresa orientación sobre arquitectura y escalamiento?",
+      "answers": [
+        {
+          "answer": "AWS Support Concierge Service",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Infrastructure Event Management",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "AWS Knowledge Center",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "AWS Personal Health Dashboard",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "A una empresa le preocupa que estén gastando dinero en recursos informáticos subutilizados en AWS. ¿Qué característica de AWS ayudará a garantizar que sus aplicaciones agreguen o eliminen automáticamente la capacidad informática de EC2 para que coincida estrechamente con la demanda requerida?",
+      "answers": [
+        {
+          "answer": "Balanceador Elástico de carga(AWS Elastic Load Balancer)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Escalado automático de AWS(AWS Auto Scaling)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Presupuestos de AWS(AWS Budgets)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Explorador de costos de AWS(AWS Cost Explorer)",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Una empresa japonesa aloja sus aplicaciones en instancias Amazon EC2 en la región de Tokio. La compañía ha abierto nuevas sucursales en los Estados Unidos, y los usuarios estadounidenses se quejan de la alta latencia. ¿Qué puede hacer la empresa para reducir la latencia de los usuarios en los EE.UU. mientras minimiza los costos?",
+      "answers": [
+        {
+          "answer": "Aplicación de la política de enrutamiento basada en latencia de Amazon Connect",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Registrar un nuevo nombre de dominio de EE. UU. para servir a los usuarios en los EE. UU.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Construir un nuevo centro de datos en los Estados Unidos e implementar un modelo híbrido",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Implementación de nuevas instancias Amazon EC2 en una región ubicada en EE. UU.",
+          "correct": true,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Cuál de los siguientes es un ejemplo de escalado horizontal en la nube de AWS?",
+      "answers": [
+        {
+          "answer": "Aumento de la capacidad de cómputo de una única instancia EC2 para hacer frente a las crecientes demandas de una aplicación",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Agregar más instancias EC2 del mismo tamaño para controlar un aumento en el tráfico",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Agregar más capacidad de RAM a una instancia EC2",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Sustitución de una instancia EC2 existente por una más grande y potente",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Cuál de las siguientes opciones debe proporcionar un usuario de IAM para interactuar con los servicios de AWS mediante la AWS Command Line Interface (AWS CLI)?",
+      "answers": [
+        {
+          "answer": "Nombre de usuario y contraseña",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "(Claves de acceso)Access keys",
+          "correct": true,
+          "explanation": ""
+        },
+        { "answer": "Token secreto", "correct": false, "explanation": "" },
+        { "answer": "ID de usuario", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "¿Cuáles son los beneficios de tener una infraestructura alojada en AWS? (Elija DOS)",
+      "answers": [
+        {
+          "answer": "[ ] No hay necesidad de preocuparse por la seguridad",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Aumento de la velocidad y la agilidad",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Toda la seguridad física y la mayor parte de la seguridad de datos / red se encargan de usted",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Obtener un control completo sobre la infraestructura física",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Operar aplicaciones en nombre de los clientes",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "El proceso de identificación de una empresa de servicios financieros en línea requiere que los nuevos usuarios deben completar una entrevista en línea con su equipo de seguridad. Las entrevistas grabadas completadas solo se requieren en caso de un problema legal o una violación del cumplimiento normativo. ¿Cuál es el servicio más rentable para almacenar los videos grabados?",
+      "answers": [
+        {
+          "answer": "S3 Intelligent-Tiering",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "Amazon EBS", "correct": false, "explanation": "" },
+        {
+          "answer": "Amazon S3 Glacier Deep Archive",
+          "correct": true,
+          "explanation": ""
+        },
+        { "answer": "AWS Marketplace", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Una empresa tiene un plan de AWS Enterprise Support. Quieren una orientación rápida y eficiente con sus consultas de facturación y cuenta. ¿Cuál de las siguientes opciones debe utilizar la empresa?",
+      "answers": [
+        {
+          "answer": "Soporte de operaciones de AWS (AWS Operations Support)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Panel de salud personal de AWS (AWS Personal Health Dashboard)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Conserje de AWS Support (AWS Support Concierge)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Servicio al cliente de AWS (AWS Customer Service)",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Una empresa de nueva creación está operando con fondos limitados y está extremadamente preocupada por los sobrecostos. ¿Cuál de las siguientes opciones se puede utilizar para notificar a la empresa cuando su factura mensual de AWS supera los $500.000 ? (Elija DOS)",
+      "answers": [
+        {
+          "answer": "[ ] Configurar Amazon Connect Service para alertar a la empresa cuando se supere el umbral",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Configurar Amazon Simple Email Service para enviar alertas de facturación a su dirección de correo electrónico diariamente",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Configurar una alarma de facturación de CloudWatch que active una notificación SNS cuando se supere el umbral",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Configurar AWS Budgets Service para alertar a la empresa cuando se supere el umbral",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Configurar AWS CloudTrail para eliminar automáticamente todos los recursos de AWS cuando se supere el umbral",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Qué servicio proporciona DNS en la nube de AWS?",
+      "answers": [
+        { "answer": "AWS Config", "correct": false, "explanation": "" },
+        { "answer": "Amazon EMR", "correct": false, "explanation": "" },
+        { "answer": "Amazon CloudFront", "correct": false, "explanation": "" },
+        { "answer": "Amazon Route 53", "correct": true, "explanation": "" }
+      ]
+    },
+    {
+      "question": "¿Qué afirmación es cierta con respecto al modelo de responsabilidad compartida de AWS?",
+      "answers": [
+        {
+          "answer": "La aplicación de parches al sistema operativo invitado es siempre responsabilidad de AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Las responsabilidades varían dependiendo de los servicios utilizados",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "La seguridad de los servicios gestionados es responsabilidad del cliente",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "La seguridad de los servicios de IaaS es responsabilidad de AWS",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿A qué se refiere el \"Principio de Mínimo Privilegio\"?",
+      "answers": [
+        {
+          "answer": "Todos los usuarios de IAM de confianza deben tener acceso a cualquier servicio de AWS en la cuenta de AWS correspondiente",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Todos los usuarios de IAM deben tener al menos los permisos necesarios para obtener acceso a los servicios principales de AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Debe otorgar a sus usuarios solo los permisos que necesitan cuando los necesitan y nada más",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "A los usuarios de IAM no se les debe conceder ningún permiso; para mantener tu cuenta segura",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Una empresa está implementando una nueva aplicación web de dos niveles en AWS. ¿Dónde se deben almacenar los datos a los que se accede con más frecuencia para que el tiempo de respuesta de la aplicación sea óptimo?",
+      "answers": [
+        { "answer": "AWS OpsWorks", "correct": false, "explanation": "" },
+        {
+          "answer": "Volumen de Amazon EBS",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "Amazon ElastiCache", "correct": true, "explanation": "" },
+        { "answer": "AWS Storage Gateway", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "AWS permite a los usuarios administrar sus recursos mediante una interfaz de usuario basada en web. ¿Cuál es el nombre de esta interfaz?",
+      "answers": [
+        { "answer": "AWS CLI", "correct": false, "explanation": "" },
+        { "answer": "AWS SDK", "correct": false, "explanation": "" },
+        {
+          "answer": "Consola de administración de AWS",
+          "correct": true,
+          "explanation": ""
+        },
+        { "answer": "AWS API", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Una empresa planea alojar un sitio web educativo en AWS. Sus cursos de video se transmitirán en todo el mundo. ¿Cuál de los siguientes servicios de AWS ayudará a lograr altas velocidades de transferencia?",
+      "answers": [
+        { "answer": "Amazon SNS", "correct": false, "explanation": "" },
+        { "answer": "AWS CloudFormation", "correct": false, "explanation": "" },
+        {
+          "answer": "Transmisiones de vídeo de Amazon Kinesis",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "Amazon CloudFront", "correct": true, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Su empresa está desarrollando una aplicación web crítica en AWS, y la seguridad de la aplicación es una prioridad. ¿Cuál de los siguientes servicios de AWS proporcionará recomendaciones de optimización de la seguridad de la infraestructura?",
+      "answers": [
+        {
+          "answer": "Consola de administración de AWS(AWS Management Console)",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "AWS Shield", "correct": false, "explanation": "" },
+        { "answer": "AWS Trusted Advisor", "correct": true, "explanation": "" },
+        { "answer": "AWS Secrets Manager", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "¿Cuál de las siguientes opciones se puede describir como un servicio de red de entrega de contenido global (CDN)?",
+      "answers": [
+        { "answer": "Amazon CloudFront", "correct": true, "explanation": "" },
+        { "answer": "AWS Direct Connect", "correct": false, "explanation": "" },
+        { "answer": "AWS Regions", "correct": false, "explanation": "" },
+        { "answer": "AWS VPN", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Bajo el modelo de responsabilidad compartida, ¿cuál de las siguientes es la responsabilidad de AWS?",
+      "answers": [
+        {
+          "answer": "Cifrado del lado del servidor",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Configuración de dispositivos de infraestructura",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Cifrado del lado del cliente",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Filtrado del tráfico con grupos de seguridad",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Cuál de las siguientes es una práctica recomendada al diseñar soluciones en AWS?",
+      "answers": [
+        {
+          "answer": "Aprovisione una gran capacidad de cómputo para manejar cualquier pico de carga",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Invierta mucho en la arquitectura de su entorno, ya que no es fácil cambiar su diseño más adelante",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Automatice siempre que sea posible para facilitar la experimentación arquitectónica",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Utilice las reservas de AWS para reducir los costos al probar su entorno de producción",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "El principio \"diseñar para errores y nada fallará\" es muy importante al diseñar su arquitectura de nube de AWS. ¿Cuál de las siguientes cosas ayudaría a adherirse a este principio? (Elija DOS)",
+      "answers": [
+        {
+          "answer": "[ ] Zonas de disponibilidad",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Autenticación multifactor (MFA)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Escalado vertical (Vertical Scaling)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Elastic Load Balancing",
+          "correct": true,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Ha configurado la facturación consolidada para varias cuentas de AWS. Una de las cuentas ha comprado una serie de instancias reservadas durante 3 años. ¿Cuál de las siguientes situaciones es cierta con respecto a este escenario?",
+      "answers": [
+        {
+          "answer": "Todas las cuentas pueden recibir el beneficio de costo por hora de las instancias reservadas",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Las instancias compradas tendrán un mejor rendimiento que las instancias bajo demanda",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Los descuentos de instancia reservada solo se pueden compartir con la cuenta maestra",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "No hay beneficios de costos al usar la facturación consolidada; Es solo para fines informativos",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Como parte del plan de soporte Enterprise, ¿quién es el principal punto de contacto para las necesidades de soporte continuo?",
+      "answers": [
+        {
+          "answer": "Usuario de AWS Identity and Access Management (IAM)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Socios consultores de AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Ingeniero de gestión de eventos de infraestructura (IEM)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Gerente Técnico de Cuentas (TAM-Technical Account Manager)",
+          "correct": true,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Cuál es el servicio de AWS que permite a los arquitectos de AWS administrar la infraestructura como código?",
+      "answers": [
+        { "answer": "AWS CloudFormation", "correct": true, "explanation": "" },
+        { "answer": "AWS Config", "correct": false, "explanation": "" },
+        { "answer": "Amazon EMR", "correct": false, "explanation": "" },
+        { "answer": "Amazon SES", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Estás trabajando en un proyecto que implica crear miniaturas de millones de imágenes. El tiempo de actividad constante no es un problema, y no se requiere un procesamiento continuo. ¿Qué opción de compra de EC2 sería la más rentable?",
+      "answers": [
+        {
+          "answer": "Instancias bajo Demanda",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "Instancias Spot", "correct": true, "explanation": "" },
+        {
+          "answer": "Instancias dedicadas",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Instancias Reservadas",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Qué servicio proporciona almacenamiento a nivel de objeto en AWS?",
+      "answers": [
+        { "answer": "Amazon EBS", "correct": false, "explanation": "" },
+        { "answer": "Amazon S3", "correct": true, "explanation": "" },
+        { "answer": "Amazon EFS", "correct": false, "explanation": "" },
+        {
+          "answer": "Amazon Instance Store",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Una empresa ha desarrollado una aplicación web de comercio electrónico en AWS. ¿Qué deben hacer para garantizar que la aplicación tenga el más alto nivel de disponibilidad?",
+      "answers": [
+        {
+          "answer": "Implementar la aplicación en varias zonas de disponibilidad y subredes",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Implementación de la aplicación en varias VPC y subredes",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Implemente la aplicación en varias zonas de disponibilidad y ubicaciones perimetrales",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Implementar la aplicación en varias regiones y zonas de disponibilidad",
+          "correct": true,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Qué proporciona AWS Personal Health Dashboard? (Elija DOS)",
+      "answers": [
+        {
+          "answer": "[ ] Recomendaciones para la optimización de costos",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Información publicada sobre el estado actual y la disponibilidad de todos los servicios de AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Guía detallada de solución de problemas para abordar los eventos de AWS que afectan a sus recursos",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Un panel que detalla las vulnerabilidades en sus aplicaciones",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Vista personalizada del estado del servicio de AWS",
+          "correct": true,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "De acuerdo con la Política de uso aceptable de AWS, ¿cuál de las siguientes afirmaciones es cierta con respecto a las pruebas de penetración de instancias EC2?",
+      "answers": [
+        {
+          "answer": "AWS realiza automáticamente pruebas de penetración para determinar las vulnerabilidades en su infraestructura de AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Los clientes de AWS solo pueden realizar pruebas de penetración en servicios administrados por AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Las pruebas de penetración no están permitidas en AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "El cliente puede realizar pruebas de penetración en sus propias instancias sin autorización previa de AWS",
+          "correct": true,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Cuál es la ventaja de la práctica recomendada por AWS de \"desacoplamiento\" de aplicaciones?",
+      "answers": [
+        {
+          "answer": "Permite tratar una aplicación como una unidad única y cohesiva",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Permite el seguimiento de cualquier llamada a la API realizada a cualquier servicio de AWS",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Permite actualizaciones de cualquier aplicación monolítica de forma rápida y sencilla",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Reduce las interdependencias para que los errores no afecten a otros componentes de la aplicación",
+          "correct": true,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Cuál es la característica de AWS que proporciona un nivel adicional de seguridad por encima del mecanismo de autenticación predeterminado de nombres de usuario y contraseñas?",
+      "answers": [
+        {
+          "answer": "Verificación de correo electrónico",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "AWS MFA", "correct": true, "explanation": "" },
+        {
+          "answer": "Claves cifradas (Encrypted keys)",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "AWS KMS", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Una de las prácticas recomendadas de AWS más importantes a seguir es el principio de elasticidad de la arquitectura de la nube. ¿Cómo mejora este principio el diseño de su arquitectura?",
+      "answers": [
+        {
+          "answer": "Aprovisionando automáticamente los recursos de AWS necesarios en función de los cambios en la demanda",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Escalando automáticamente sus recursos de AWS mediante un Elastic Load Balancer",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Reduciendo las interdependencias entre los componentes de la aplicación siempre que sea posible",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Escalando automáticamente los recursos locales en función de los cambios en la demanda",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "¿Cuáles de los siguientes son ejemplos de servicios administrados de AWS, donde AWS es responsable de las cargas operativas y de mantenimiento de la ejecución del servicio?",
+      "answers": [
+        { "answer": "[ ] Amazon DynamoDB", "correct": true, "explanation": "" },
+        {
+          "answer": "[ ] Amazon Elastic Compute Cloud",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "[ ] Amazon VPC", "correct": false, "explanation": "" },
+        {
+          "answer": "[ ] Amazon Elastic MapReduce",
+          "correct": true,
+          "explanation": ""
+        },
+        { "answer": "[ ] AWS IAM", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "¿Qué clase de almacenamiento de S3 es la mejor para datos con patrones de acceso impredecibles?",
+      "answers": [
+        {
+          "answer": "Estándar de Amazon S3",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Acceso poco frecuente estándar de Amazon S3(Amazon S3 Standard-Infrequent Access)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "Niveles inteligentes de Amazon S3(Amazon S3 Intelligent-Tiering)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Glaciar Amazon S3 (Amazon S3 Glacier)",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Su empresa tiene una aplicación de almacén de datos que requiere acceso a una base de datos NoSQL. ¿Qué oferta de base de datos de AWS cumpliría este requisito?",
+      "answers": [
+        {
+          "answer": "Amazon Elastic Block Store",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "Amazon DynamoDB", "correct": true, "explanation": "" },
+        { "answer": "Amazon Aurora", "correct": false, "explanation": "" },
+        { "answer": "Amazon Redshift", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "Trabaja localmente en un DBA de MySQL. El trabajo de configuración de bases de datos, copias de seguridad, parches y DR en recuperación ante desastres puede llevar mucho tiempo y ser repetitivo. Su empresa ha decidido migrar a la nube de AWS. ¿Cuál de las siguientes opciones puede ayudar a ahorrar tiempo en el mantenimiento de la base de datos para que pueda centrarse en la arquitectura y el rendimiento de los datos?",
+      "answers": [
+        { "answer": "Amazon Redshift", "correct": false, "explanation": "" },
+        { "answer": "Amazon CloudWatch", "correct": false, "explanation": "" },
+        { "answer": "Amazon DynamoDB", "correct": false, "explanation": "" },
+        { "answer": "Amazon RDS", "correct": true, "explanation": "" }
+      ]
+    },
+    {
+      "question": "¿Cuál de los siguientes servicios permite a los clientes administrar sus acuerdos con AWS?",
+      "answers": [
+        {
+          "answer": "AWS Certificate Manager",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "AWS Organizations", "correct": false, "explanation": "" },
+        { "answer": "AWS Artifact", "correct": true, "explanation": "" },
+        { "answer": "AWS Systems Manager", "correct": false, "explanation": "" }
+      ]
+    },
+    {
+      "question": "¿Cuál de las siguientes opciones no es un beneficio de Amazon S3? (Elija DOS)",
+      "answers": [
+        {
+          "answer": "[ ] Amazon S3 se puede escalar manualmente para almacenar y recuperar cualquier cantidad de datos desde cualquier lugar",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Amazon S3 puede ejecutar cualquier tipo de aplicación o sistema back-end",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Amazon S3 proporciona almacenamiento ilimitado para cualquier tipo de datos",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Amazon S3 almacena cualquier número de objetos, pero con límites de tamaño de objeto",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "answer": "[ ] Amazon S3 proporciona un 99,999999999 % (11 9) de durabilidad de los datos",
+          "correct": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "Una empresa ha decidido migrar su base de datos Oracle a AWS. ¿Qué servicio de AWS puede ayudar a lograr esto sin afectar negativamente a la funcionalidad de la base de datos de origen?",
+      "answers": [
+        {
+          "answer": "Servicio de migración de servidores de AWS (AWS Server Migration Service)",
+          "correct": false,
+          "explanation": ""
+        },
+        { "answer": "AWS OpsWorks", "correct": false, "explanation": "" },
+        {
+          "answer": "Servicio de migración de bases de datos de AWS (AWS Database Migration Service)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "answer": "Servicio de detección de aplicaciones de AWS (AWS Application Discovery Service)",
+          "correct": false,
+          "explanation": ""
+        }
       ]
     }
   ]

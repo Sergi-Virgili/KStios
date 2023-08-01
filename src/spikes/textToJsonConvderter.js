@@ -139,7 +139,8 @@ Referencias:
 https://aws.amazon.com/answers/networking/aws-ddos-attack-mitigation/
 `;
 
-let questions = text
+let questions = texto
+  .replace(/\*/g, "")
   .split("Pregunta")
   .splice(1)
   .map((question) => {
@@ -172,5 +173,4 @@ let questions = text
       // "explicacion" : question.split('Explicación')[1]
     };
   });
-
 console.log(questions);
