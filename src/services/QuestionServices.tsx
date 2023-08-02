@@ -17,7 +17,10 @@ export const fetchInitQuestions = async (): Promise<Question[]> => {
           x.question,
           x.answers.map(
             (y: any) => new Answer(1, y.answer, y.correct, y.feedback)
-          )
+          ),
+          x.explanation,
+          x.incorrect,
+          x.references
         )
       );
     });

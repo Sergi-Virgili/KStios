@@ -1,6 +1,8 @@
 import { Button } from "flowbite-react";
 import Answer from "../domain/Answer";
 import { Question } from "../domain/Question";
+import Explanation from "./Explanation";
+import { useState } from "react";
 
 interface Props {
   actualQuestion: Question;
@@ -12,6 +14,7 @@ interface Props {
 }
 
 function QuestionCard(props: Props) {
+  const [explainActive, setExplainActive] = useState(false);
   function resultAvise() {
     if (!props.correctionMode) return "";
     return props.actualQuestion.isQuestionCorrect() ? <p>OK</p> : <p>FAILED</p>;
@@ -46,9 +49,29 @@ function QuestionCard(props: Props) {
           </li>
         ))}
       </ul>
-      <Button pill onClick={props.handleSubmit} className="my-5 ">
-        Submit
-      </Button>
+      {explainActive ? (
+        <Explanation
+          explanation={props.actualQuestion.explanation || ""}
+          incorrect={props.actualQuestion.incorrect || ""}
+          references={props.actualQuestion.references || ""}
+        />
+      ) : (
+        ""
+      )}
+      {!props.actualQuestion.isSubmitted ? (
+        <Button pill onClick={props.handleSubmit} className="my-5 ">
+          Envíame
+        </Button>
+      ) : (
+        <Button
+          pill
+          color="pink"
+          onClick={() => setExplainActive(!explainActive)}
+          className="my-5 "
+        >
+          {!explainActive ? <>Explícame</> : <>Ocultame</>}
+        </Button>
+      )}
     </article>
   );
 }

@@ -7,7 +7,10 @@
         { "answer": "Premium RI", "correct": false, "explanation": "" },
         { "answer": "RI estándar", "correct": false, "explanation": "" },
         { "answer": "Convertible RI", "correct": true, "explanation": "" }
-      ]
+      ],
+      "explanation": "Cuando sus necesidades cambien, puede cambiar sus Instancias Reservadas Convertibles y continuar beneficiándose del descuento de precios de la reserva. Con las RI convertibles, puede intercambiar una o más instancias reservadas por otra instancia reservada con una configuración diferente, incluida la familia de instancias, el sistema operativo y el arrendamiento. No hay límites para el número de veces que realice un intercambio, siempre que la nueva instancia reservada convertible tenga un valor igual o superior al de las instancias reservadas convertibles originales que está intercambiando.",
+      "incorrect": "Un servicio de transferencia de datos a escala de exabytes que le permite mover cantidades extremadamente grandes de datos a AWS es incorrecto. AWS Snowmobile es el servicio de migración de datos a escala de exabytes que le permite mover conjuntos de datos muy grandes desde las instalaciones a AWS.",
+      "references": "<a>https://aws.amazon.com/ec2/pricing/reserved-instances/</a> \n https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-convertible-exchange.html"
     },
     {
       "question": "¿Qué proporciona AWS Snowball? (Elija DOS)",
