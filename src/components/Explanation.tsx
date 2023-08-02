@@ -1,3 +1,5 @@
+import parse from "html-react-parser";
+
 interface Props {
   explanation: string;
   incorrect: string;
@@ -27,7 +29,7 @@ export default function Explanation({
         <h3 className="my-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           Referencias
         </h3>
-        {references}
+        {parse(references)}
       </p>
     </>
   );
