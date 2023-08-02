@@ -30,7 +30,11 @@ export function textToJSON(texto: string) {
         });
 
       return {
+<<<<<<< HEAD
         question: pregunta.replaceAll("\n", "<br/>").replaceAll('"', ""),
+=======
+        question: pregunta.replaceAll("\n", "<br />").replaceAll('"', ""),
+>>>>>>> 378870e6817db7fe2579227c639ca094c6633939
         answers: respuestas,
         explanation: question
           .slice(
@@ -48,13 +52,21 @@ export function textToJSON(texto: string) {
           )
           .replaceAll("Las otras opciones son incorrectas:", "")
           .trim()
+<<<<<<< HEAD
           .replaceAll("\n", "<br/>")
+=======
+          .replaceAll("\n", "<br />")
+>>>>>>> 378870e6817db7fe2579227c639ca094c6633939
           .replaceAll('"', ""),
         references: question
           .slice(question.indexOf("Referencias:"))
           .replaceAll("Referencias:", "")
           .trim()
+<<<<<<< HEAD
           .replaceAll("\n", "<br/>")
+=======
+          .replaceAll("\n", "<br />")
+>>>>>>> 378870e6817db7fe2579227c639ca094c6633939
           .replaceAll('"', ""),
       };
     });
