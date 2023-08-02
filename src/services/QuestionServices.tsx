@@ -10,6 +10,7 @@ import { textToJSON } from "../spikes/realtimeConverter";
 export const fetchInitialQuestions = fetch("/data/data.txt")
   .then((res) => res.text())
   .then((content) => {
+    console.log(textToJSON(content));
     return textToJSON(content);
   });
 

@@ -1,7 +1,7 @@
 export function textToJSON(texto: string) {
   let questions = texto
-    .replace(/\*/g, "")
-    .replace("[ ]", "")
+    .replaceAll(/\*/g, "")
+    .replaceAll("[ ]", "")
     .split("Pregunta")
     .splice(1)
     .map((question) => {
@@ -10,16 +10,19 @@ export function textToJSON(texto: string) {
         .split("•")[0]
         .trim()
         .slice(3)
-        .replace("Omitido", "")
+        .replaceAll("Omitido", "")
         .trim();
 
       const respuestas = question
         .split("Explicación")[0]
         .split("•")
-        .filter((_x, index) => index != 0)
-        .map((answer) => {
+        .filter((_x: string, index: number) => index != 0)
+        .map((answer: string) => {
           let isCorrect = answer.includes("(Correcto)");
-          let texto = answer.replace("\n", "").trim().replace("(Correcto)", "");
+          let texto = answer
+            .replaceAll("\n", "")
+            .trim()
+            .replace("(Correcto)", "");
           return {
             answer: texto,
             correct: isCorrect,
@@ -27,7 +30,7 @@ export function textToJSON(texto: string) {
         });
 
       return {
-        question: pregunta.replace("\n", "<br />").replace('"', ""),
+        question: pregunta.replaceAll("\n", "<br/>").replaceAll('"', ""),
         answers: respuestas,
         explanation: question
           .slice(
@@ -35,24 +38,24 @@ export function textToJSON(texto: string) {
             question.indexOf("Las otras opciones son incorrectas:")
           )
           .replace("Explicación", "")
-          .trim()
-          .replace("\n", "<br />")
-          .replace('"', ""),
+
+          .replaceAll("\n", " <br/> ")
+          .replaceAll('"', ""),
         incorrect: question
           .slice(
             question.indexOf("Las otras opciones son incorrectas:"),
             question.indexOf("Referencias:")
           )
-          .replace("Las otras opciones son incorrectas:", "")
+          .replaceAll("Las otras opciones son incorrectas:", "")
           .trim()
-          .replace("\n", "<br />")
-          .replace('"', ""),
+          .replaceAll("\n", "<br/>")
+          .replaceAll('"', ""),
         references: question
           .slice(question.indexOf("Referencias:"))
-          .replace("Referencias:", "")
+          .replaceAll("Referencias:", "")
           .trim()
-          .replace("\n", "<br />")
-          .replace('"', ""),
+          .replaceAll("\n", "<br/>")
+          .replaceAll('"', ""),
       };
     });
   return questions;
