@@ -14,7 +14,6 @@ function Questions() {
 
   const actualQuestion = questions[questionNumber];
   const [currentPage, setCurrentPage] = useState(1);
-  // const onPageChange = (page: number) => setCurrentPage(page);
 
   useEffect(() => {
     fetchInitQuestions().then((data) => {

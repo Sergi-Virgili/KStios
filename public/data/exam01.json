@@ -1,43 +1,44 @@
 {
   "questions": [
     {
-      "question": "Una organización ha decidido comprar una instancia reservada (RI) de Amazon EC2 durante tres años para reducir los costes. Es posible que las cargas de trabajo de la aplicación cambien durante el período de reserva.\n\n¿Cuál es el tipo de instancia reservada (RI) de EC2 que permitirá a la empresa intercambiar la instancia reservada comprada por otra instancia reservada con mayor potencia de cálculo si es necesario?",
+      "question": "Una organización ha decidido comprar una instancia reservada (RI) de Amazon EC2 durante tres años para reducir los costes. Es posible que las cargas de trabajo de la aplicación cambien durante el período de reserva.<br /><br />¿Cuál es el tipo de instancia reservada (RI) de EC2 que permitirá a la empresa intercambiar la instancia reservada comprada por otra instancia reservada con mayor potencia de cálculo si es necesario?",
       "answers": [
-        { "answer": "RI elástico", "correct": false, "explanation": "" },
-        { "answer": "Premium RI", "correct": false, "explanation": "" },
-        { "answer": "RI estándar", "correct": false, "explanation": "" },
-        { "answer": "Convertible RI", "correct": true, "explanation": "" }
-      ]
+        { "answer": "RI elástico", "correct": false },
+        { "answer": "Premium RI", "correct": false },
+        { "answer": "RI estándar", "correct": false },
+        { "answer": "Convertible RI", "correct": true }
+      ],
+      "explanation": "Cuando sus necesidades cambien, puede cambiar sus Instancias Reservadas Convertibles y continuar beneficiándose del descuento de precios de la reserva. Con las RI convertibles, puede intercambiar una o más instancias reservadas por otra instancia reservada con una configuración diferente, incluida la familia de instancias, el sistema operativo y el arrendamiento. No hay límites para el número de veces que realice un intercambio, siempre que la nueva instancia reservada convertible tenga un valor igual o superior al de las instancias reservadas convertibles originales que está intercambiando.",
+      "incorrect": "RI estándar es incorrecto. No puede intercambiar instancias reservadas estándar, pero puede modificarlas. Puede modificar atributos como la zona de disponibilidad, el tamaño de la instancia (dentro de la misma familia de instancias) y el ámbito de la instancia reservada (regional o zonal). Los RI estándar proporcionan el descuento más significativo (hasta un 72% de descuento bajo demanda) y son los más adecuados para el uso en estado estacionario.<br /><br />RI elásticos e RI premium no son tipos de RI válidos.",
+      "references": "https://aws.amazon.com/ec2/pricing/reserved-instances/<br />https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-convertible-exchange.html"
     },
     {
       "question": "¿Qué proporciona AWS Snowball? (Elija DOS)",
       "answers": [
         {
-          "answer": "[ ] Un catálogo de soluciones de software de terceros que los clientes necesitan para crear soluciones y administrar sus negocios",
-          "correct": false,
-          "explanation": ""
+          "answer": "Un catálogo de soluciones de software de terceros que los clientes necesitan para crear soluciones y administrar sus negocios",
+          "correct": false
         },
         {
-          "answer": "[ ] Transferencia segura de grandes cantidades de datos dentro y fuera de la nube de AWS",
-          "correct": true,
-          "explanation": ""
+          "answer": "Transferencia segura de grandes cantidades de datos dentro y fuera de la nube de AWS",
+          "correct": true
         },
         {
-          "answer": "[ ] Un almacenamiento en la nube híbrida entre entornos locales y la nube de AWS",
-          "correct": false,
-          "explanation": ""
+          "answer": "Un almacenamiento en la nube híbrida entre entornos locales y la nube de AWS",
+          "correct": false
         },
         {
-          "answer": "[ ] Capacidades informáticas integradas que permiten a los clientes procesar datos localmente",
-          "correct": true,
-          "explanation": ""
+          "answer": "Capacidades informáticas integradas que permiten a los clientes procesar datos localmente",
+          "correct": true
         },
         {
-          "answer": "[ ] Un servicio de transferencia de datos a escala de exabytes que le permite mover cantidades extremadamente grandes de datos a AWS",
-          "correct": false,
-          "explanation": ""
+          "answer": "Un servicio de transferencia de datos a escala de exabytes que le permite mover cantidades extremadamente grandes de datos a AWS",
+          "correct": false
         }
-      ]
+      ],
+      "explanation": "AWS Snowball es una solución de transporte de datos a escala de petabytes que utiliza dispositivos seguros para transferir grandes cantidades de datos dentro y fuera de la nube de AWS. El uso de Snowball aborda los desafíos comunes con las transferencias de datos a gran escala, incluidos los altos costos de red, los largos tiempos de transferencia y los problemas de seguridad. Los clientes de AWS utilizan Snowball para migrar datos de análisis, datos genómicos, bibliotecas de vídeo, repositorios de imágenes y copias de seguridad. La transferencia de datos con Snowball es simple, rápida, segura y puede costar tan solo una quinta parte del costo de usar Internet de alta velocidad.<br />Además, con AWS Snowball, puede obtener acceso a la potencia informática de la nube de AWS de forma local y rentable en lugares donde la conexión a Internet podría no ser una opción. AWS Snowball es una opción perfecta si necesita ejecutar informática en entornos robustos, austeros, móviles o desconectados (o conectados intermitentemente).<br />Con AWS Snowball, puede elegir entre dos dispositivos, Snowball EdgeCompute Optimizado con más capacidades informáticas, adecuado para cargas de trabajo de mayor rendimiento, o Snowball Edge Storage Optimizado con más almacenamiento, que es adecuado para migraciones de datos a gran escala y cargas de trabajo orientadas a la capacidad.<br />Snowball Edge Storage Optimized es la opción óptima si necesita transferir de forma segura y rápida docenas de terabytes a petabytes de datos a AWS. También es una buena opción para ejecutar análisis de propósito general, como la agregación y transformación de datos de IoT.<br />Snowball Edge Compute Optimized es la opción óptima si necesita un potente cómputo y almacenamiento de alta velocidad para el procesamiento de datos. Los ejemplos incluyen procesamiento de video de alta resolución, análisis avanzado de datos de IoT y optimización en tiempo real de modelos de aprendizaje automático.",
+      "incorrect": "Un catálogo de soluciones de software de terceros que los clientes necesitan para crear soluciones y administrar sus negocios es incorrecto. AWS Marketplace es el servicio que proporciona este catálogo. AWS Marketplace es un catálogo digital con miles de listados de software de proveedores de software independientes que facilitan la búsqueda, prueba, compra e implementación de software que se ejecuta en AWS. AWS Marketplace incluye listados de software de categorías como seguridad, redes, almacenamiento, aprendizaje automático, inteligencia empresarial, base de datos y DevOps.<br /><br />Un almacenamiento en la nube híbrida entre entornos locales y la nube de AWS es incorrecto. AWS Storage Gateway es el servicio que permite a sus aplicaciones locales utilizar sin problemas el almacenamiento en la nube de AWS.<br /><br />Un servicio de transferencia de datos a escala de exabytes que le permite mover cantidades extremadamente grandes de datos a AWS es incorrecto. AWS Snowmobile es el servicio de migración de datos a escala de exabytes que le permite mover conjuntos de datos muy grandes desde las instalaciones a AWS.",
+      "references": "https://aws.amazon.com/snowball/"
     },
     {
       "question": "¿Qué es el servicio de AWS que proporciona una red virtual dedicada a su cuenta de AWS?",

@@ -5,10 +5,22 @@ export class Question implements IQuestion {
   question: string;
   answers: Answer[];
   isSubmitted: boolean = false;
+  explanation?: string = "";
+  incorrect?: string = "";
+  references?: string = "";
 
-  constructor(question: string, answers: Answer[]) {
+  constructor(
+    question: string,
+    answers: Answer[],
+    explanation?: string,
+    incorrect?: string,
+    references?: string
+  ) {
     this.question = question;
     this.answers = answers;
+    this.explanation = explanation;
+    this.incorrect = incorrect;
+    this.references = references;
   }
 
   numberOfCorrectAnswers(): number {

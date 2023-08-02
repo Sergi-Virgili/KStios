@@ -1,7 +1,9 @@
 import { Button } from "flowbite-react";
 import Answer from "../domain/Answer";
 import { Question } from "../domain/Question";
-
+import Explanation from "./Explanation";
+import { useEffect, useState } from "react";
+import parse from "html-react-parser";
 interface Props {
   actualQuestion: Question;
   questionNumber: number;
@@ -12,6 +14,11 @@ interface Props {
 }
 
 function QuestionCard(props: Props) {
+  const [explainActive, setExplainActive] = useState(false);
+  useEffect(() => {
+    setExplainActive(false);
+  }, [props.actualQuestion]);
+  // setExplainActive(false);
   function resultAvise() {
     if (!props.correctionMode) return "";
     return props.actualQuestion.isQuestionCorrect() ? <p>OK</p> : <p>FAILED</p>;
@@ -24,8 +31,8 @@ function QuestionCard(props: Props) {
       </h2>
 
       <p className="font-normal text-gray-700 dark:text-gray-400 my-5 max-h-50 w-100 min-w-1/1">
-        {props.actualQuestion.question}{" "}
-        {props.actualQuestion.numberOfCorrectAnswers()}
+        {parse(props.actualQuestion.question)}{" "}
+        {/* {props.actualQuestion.numberOfCorrectAnswers()} */}
       </p>
       <ul>
         {props.actualQuestion.answers.map((x: Answer, index: number) => (
@@ -46,9 +53,30 @@ function QuestionCard(props: Props) {
           </li>
         ))}
       </ul>
-      <Button pill onClick={props.handleSubmit} className="my-5 ">
-        Submit
-      </Button>
+
+      {!props.actualQuestion.isSubmitted ? (
+        <Button pill onClick={props.handleSubmit} className="my-5 ">
+          Envíame
+        </Button>
+      ) : (
+        <Button
+          pill
+          color="pink"
+          onClick={() => setExplainActive(!explainActive)}
+          className="my-5 "
+        >
+          {!explainActive ? <>Explícame</> : <>Ocultame</>}
+        </Button>
+      )}
+      {explainActive ? (
+        <Explanation
+          explanation={props.actualQuestion.explanation || ""}
+          incorrect={props.actualQuestion.incorrect || ""}
+          references={props.actualQuestion.references || ""}
+        />
+      ) : (
+        ""
+      )}
     </article>
   );
 }
