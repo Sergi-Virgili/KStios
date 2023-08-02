@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Question } from "../domain/Question";
 import Answer from "../domain/Answer";
 import { textToJSON } from "../spikes/realtimeConverter";
