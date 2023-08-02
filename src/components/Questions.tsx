@@ -4,6 +4,8 @@ import { Question } from "../domain/Question";
 import Answer from "../domain/Answer";
 import QuestionCard from "./QuestionCard";
 import QuestionCounter from "./QuestionCounter";
+import { Pagination } from "flowbite-react";
+import { Card } from "flowbite-react";
 
 function Questions() {
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -11,7 +13,8 @@ function Questions() {
   const [correctionMode, setCorrectionMode] = useState(false);
 
   const actualQuestion = questions[questionNumber];
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const onPageChange = (page: number) => setCurrentPage(page);
   const handlePrev = () => {
     if (questionNumber > 0) setCurrentQuestion(questionNumber - 1);
   };
@@ -56,9 +59,9 @@ function Questions() {
 
   if (questions.length === 0) return <h2>Loading...</h2>;
   return (
-    <>
+    <Card className="min-w-full">
       <QuestionCounter
-        questionNumber={questionNumber + 1}
+        questionNumber={currentPage}
         questionsTotal={questions.length}
       ></QuestionCounter>
       <QuestionCard
@@ -70,10 +73,17 @@ function Questions() {
         handleCheck={handleCheck}
       ></QuestionCard>
       <section>
-        <button onClick={handlePrev}>Prev</button>
-        <button onClick={handleNext}>Next</button>
+        <Pagination
+          currentPage={currentPage}
+          onPageChange={(page) => {
+            setCurrentPage(page);
+            setCurrentQuestion(page - 1);
+          }}
+          showIcons
+          totalPages={questions.length}
+        />
       </section>
-    </>
+    </Card>
   );
 }
 

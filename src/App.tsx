@@ -1,7 +1,8 @@
-import { useEffect } from "react";
 import "./App.css";
+import DefaultSidebar from "./components/DefaultSidebar";
 import Questions from "./components/Questions";
-import { fetchInitialQuestions } from "./services/QuestionServices";
+import { Button, DarkThemeToggle } from "flowbite-react";
+import { Flowbite, Card } from "flowbite-react";
 
 function App() {
   // useEffect(() => {
@@ -12,9 +13,15 @@ function App() {
 
   return (
     <div className="app">
-      <h1>KStios</h1>
-      <p>A Simple Questions Quiz</p>
-      <Questions />
+      <Flowbite>
+        {/* <DarkThemeToggle /> */}
+        {/* <DefaultSidebar /> */}
+
+        <h1>KStios</h1>
+        <p>A Simple Questions Quiz</p>
+
+        <Questions />
+      </Flowbite>
     </div>
   );
 }

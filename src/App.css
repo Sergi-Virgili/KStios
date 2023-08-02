@@ -1,13 +1,13 @@
-#root {
+/* #root {
   margin: 0 auto;
   padding: 0;
   text-align: center;
   color: rgb(50, 50, 50);
   background-color: #fff;
   height: 100vh;
-}
+} */
 
-.card {
+/* .card {
   width: 80%;
   max-width: 1250px;
   margin: 0 auto;
@@ -35,4 +35,15 @@
 
 .read-the-docs {
   color: #888;
+} */
+.app {
+  margin: 0 auto;
+
+  /* border: 1px solid #000; */
+  display: flex;
+  max-width: 1050px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  height: 100vh;
 }
