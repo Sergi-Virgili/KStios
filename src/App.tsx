@@ -1,8 +1,6 @@
 import "./App.css";
-import DefaultSidebar from "./components/DefaultSidebar";
+import { Flowbite } from "flowbite-react";
 import Questions from "./components/Questions";
-import { Button, DarkThemeToggle } from "flowbite-react";
-import { Flowbite, Card } from "flowbite-react";
 
 function App() {
   // useEffect(() => {

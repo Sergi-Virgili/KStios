@@ -25,10 +25,10 @@ export const fetchInitQuestions = async (): Promise<Question[]> => {
   return questions;
 };
 
-class QuestionService {
-  async getInitialQuestions() {
-    let initialData = fetchInitialQuestions;
-  }
-}
+// class QuestionService {
+//   async getInitialQuestions() {
+//     let initialData = fetchInitialQuestions;
+//   }
+// }
 
 // console.log this line  returns a promise
