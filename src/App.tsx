@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import "./App.css";
 import Questions from "./components/Questions";
-import { fetchInitialQuestions } from "./services/QuestionServices";
 
 function App() {
   // useEffect(() => {

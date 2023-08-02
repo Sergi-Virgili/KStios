@@ -1,6 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { IQuestion } from "../types";
+
 import { fetchInitQuestions } from "../services/QuestionServices";
 import { Question } from "../domain/Question";
 import Answer from "../domain/Answer";
