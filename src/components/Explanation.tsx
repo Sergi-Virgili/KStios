@@ -12,25 +12,25 @@ export default function Explanation({
   references,
 }: Props) {
   return (
-    <>
-      <p className="py-5 ">
+    <section className="text-gray-500 ">
+      <div>
         <h3 className="my-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           Explicación
         </h3>
-        {explanation}
-      </p>
-      <p className="py-5 ">
+        <p>{parse(explanation)}</p>
+      </div>
+      <div className="py-5 ">
         <h3 className="my-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           Las otras opciones son incorrectas
         </h3>
-        {incorrect}
-      </p>
-      <p className="py-5 ">
+        <p>{parse(incorrect)}</p>
+      </div>
+      <div className="py-5 ">
         <h3 className="my-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           Referencias
         </h3>
-        {parse(references)}
-      </p>
-    </>
+        <p>{parse(references)}</p>
+      </div>
+    </section>
   );
 }

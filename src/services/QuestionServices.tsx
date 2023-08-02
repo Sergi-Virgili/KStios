@@ -1,11 +1,17 @@
 import axios from "axios";
 import { Question } from "../domain/Question";
 import Answer from "../domain/Answer";
+import { textToJSON } from "../spikes/realtimeConverter";
 
-export const fetchInitialQuestions = axios
-  .get("./data/exam01.json")
-  .then((response) => {
-    return response.data.questions;
+// export const fetchInitialQuestions = axios
+//   .get("./data/exam01.json")
+//   .then((response) => {
+//     return response.data.questions;
+//   });
+export const fetchInitialQuestions = fetch("/data/data.txt")
+  .then((res) => res.text())
+  .then((content) => {
+    return textToJSON(content);
   });
 
 export const fetchInitQuestions = async (): Promise<Question[]> => {
