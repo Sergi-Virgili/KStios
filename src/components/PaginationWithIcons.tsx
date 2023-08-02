@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Pagination } from "flowbite-react";
 
 export default function PaginationWithIcons({}) {
   const [currentPage, setCurrentPage] = useState(1);
-  const onPageChange = (page: number) => setCurrentPage(page);
+  // const onPageChange = (page: number) => setCurrentPage(page);
 
   return (
     <Pagination

@@ -14,15 +14,8 @@ function Questions() {
 
   const actualQuestion = questions[questionNumber];
   const [currentPage, setCurrentPage] = useState(1);
-  const onPageChange = (page: number) => setCurrentPage(page);
-  const handlePrev = () => {
-    if (questionNumber > 0) setCurrentQuestion(questionNumber - 1);
-  };
+  // const onPageChange = (page: number) => setCurrentPage(page);
 
-  const handleNext = () => {
-    if (questionNumber < questions.length - 1)
-      setCurrentQuestion(questionNumber + 1);
-  };
   useEffect(() => {
     fetchInitQuestions().then((data) => {
       setQuestions(data);
