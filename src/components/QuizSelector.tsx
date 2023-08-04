@@ -1,4 +1,4 @@
-import { Button, Card } from "flowbite-react";
+import { Card } from "flowbite-react";
 
 export default function QuizSelector() {
   return (

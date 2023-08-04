@@ -1,8 +1,7 @@
 import "./App.css";
-import { Card, Flowbite, Navbar } from "flowbite-react";
+import { Flowbite, Navbar } from "flowbite-react";
 import Questions from "./components/Questions";
 import Stopwatch from "./components/StoptWatch";
-import QuizSelector from "./components/QuizSelector";
 
 function App() {
   // useEffect(() => {
