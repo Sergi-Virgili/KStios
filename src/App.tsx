@@ -1,7 +1,8 @@
 import "./App.css";
-import { Flowbite } from "flowbite-react";
+import { Card, Flowbite, Navbar } from "flowbite-react";
 import Questions from "./components/Questions";
 import Stopwatch from "./components/StoptWatch";
+import QuizSelector from "./components/QuizSelector";
 
 function App() {
   // useEffect(() => {
@@ -15,9 +16,16 @@ function App() {
       <Flowbite>
         {/* <DarkThemeToggle /> */}
         {/* <DefaultSidebar /> */}
-        <Stopwatch />
-        <h1>KStios</h1>
-        <p>A Simple Questions Quiz</p>
+        <Navbar fluid rounded>
+          <Navbar.Brand href="https://flowbite-react.com">
+            <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+              QStios Quiz
+            </span>
+          </Navbar.Brand>
+
+          <Stopwatch />
+        </Navbar>
+        {/* <QuizSelector /> */}
 
         <Questions />
       </Flowbite>
