@@ -9,7 +9,8 @@ export default function QuestionCounter({
 }: Props) {
   return (
     <div>
-      Pregunta {questionNumber} de {questionsTotal}
+      <span className=" text-2xl">{questionNumber}</span> /{" "}
+      <span className=" text-sm">{questionsTotal}</span>
     </div>
   );
 }

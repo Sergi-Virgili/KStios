@@ -6,6 +6,7 @@ import QuestionCard from "./QuestionCard";
 import QuestionCounter from "./QuestionCounter";
 import { Pagination } from "flowbite-react";
 import { Card } from "flowbite-react";
+import StopWatch from "./StoptWatch";
 
 function Questions() {
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -55,31 +56,42 @@ function Questions() {
 
   if (questions.length === 0) return <h2>Loading...</h2>;
   return (
-    <Card className="w-full p-8">
-      <QuestionCounter
-        questionNumber={currentPage}
-        questionsTotal={questions.length}
-      ></QuestionCounter>
-      <QuestionCard
-        actualQuestion={actualQuestion}
-        correctionMode={correctionMode}
-        questionNumber={questionNumber}
-        answerStyle={answerStyle}
-        handleSubmit={handleSubmit}
-        handleCheck={handleCheck}
-      ></QuestionCard>
-      <section>
-        <Pagination
-          currentPage={currentPage}
-          onPageChange={(page) => {
-            setCurrentPage(page);
-            setCurrentQuestion(page - 1);
-          }}
-          showIcons
-          totalPages={questions.length}
-        />
-      </section>
-    </Card>
+    <>
+      <Card className="p-0 mt-0 w-full min-h-screen">
+        <header className="flex w-full rounded-2xl">
+          <div className=" w-9/12  flex ">
+            <h1 className=" text-pink-600  font-bold text-3xl">Qyz</h1>
+          </div>
+          <div className=" flex  gap-5 mb-4 bg-cyan-950 rounded-2xl text-gray-100 w-3/12  m-0  p-5 justify-end">
+            <QuestionCounter
+              questionNumber={currentPage}
+              questionsTotal={questions.length}
+            ></QuestionCounter>
+            <StopWatch />
+          </div>
+        </header>
+        <QuestionCard
+          actualQuestion={actualQuestion}
+          correctionMode={correctionMode}
+          questionNumber={questionNumber}
+          answerStyle={answerStyle}
+          handleSubmit={handleSubmit}
+          handleCheck={handleCheck}
+        ></QuestionCard>
+        <section>
+          <Pagination
+            currentPage={currentPage}
+            onPageChange={(page) => {
+              setCorrectionMode(false);
+              setCurrentPage(page);
+              setCurrentQuestion(page - 1);
+            }}
+            showIcons
+            totalPages={questions.length}
+          />
+        </section>
+      </Card>
+    </>
   );
 }
 

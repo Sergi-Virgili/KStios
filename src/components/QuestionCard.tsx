@@ -26,11 +26,8 @@ function QuestionCard(props: Props) {
   return (
     <article className="min-w-full">
       {resultAvise()}
-      <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        <p>Pregunta {props.questionNumber + 1}</p>
-      </h2>
 
-      <p className="font-normal text-gray-700 dark:text-gray-400 my-5 max-h-50 w-100 min-w-1/1">
+      <p className=" text-gray-700 dark:text-gray-400 mb-5">
         {parse(props.actualQuestion.question)}{" "}
         {/* {props.actualQuestion.numberOfCorrectAnswers()} */}
       </p>
@@ -39,7 +36,7 @@ function QuestionCard(props: Props) {
           <li key={index}>
             <Card
               onClick={() => props.handleCheck(x)}
-              className={` rounded-full w-full my-3 h-20 ${props.answerStyle(
+              className={` rounded-3xl w-full my-3 min-h-20 p-2 ${props.answerStyle(
                 x
               )}`}
               // style={{
@@ -53,14 +50,14 @@ function QuestionCard(props: Props) {
                 name="{index}"
                 id={index.toString()}
               /> */}
-              {x.answer}
+              <p>{x.answer}</p>
             </Card>
           </li>
         ))}
       </ul>
 
       {!props.actualQuestion.isSubmitted ? (
-        <Button pill onClick={props.handleSubmit} className="my-5 ">
+        <Button onClick={props.handleSubmit} className="my-5 rounded-xl">
           Envíame
         </Button>
       ) : (
