@@ -1,6 +1,7 @@
 import "./App.css";
 import { Flowbite } from "flowbite-react";
 import Questions from "./components/Questions";
+import Stopwatch from "./components/StoptWatch";
 
 function App() {
   // useEffect(() => {
@@ -14,7 +15,7 @@ function App() {
       <Flowbite>
         {/* <DarkThemeToggle /> */}
         {/* <DefaultSidebar /> */}
-
+        <Stopwatch />
         <h1>KStios</h1>
         <p>A Simple Questions Quiz</p>
 
