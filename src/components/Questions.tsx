@@ -27,6 +27,7 @@ function Questions() {
   }, [questionNumber]);
 
   const handleCheck = (answer: Answer) => {
+    console.log(answer);
     answer.checkAnswer();
     setQuestions([...questions]);
   };
@@ -37,21 +38,24 @@ function Questions() {
   };
 
   const answerStyle = (answer: Answer) => {
-    if (!correctionMode) return "white";
-    if (answer.correct && answer.isChecked) {
-      return "green";
+    if (!correctionMode && answer.isChecked)
+      return "bg-sky-100 border-2 border-blue-400 hover:bg-sky-100 hover:cursor-pointer";
+    if (!correctionMode) return "white hover:bg-sky-100 hover:cursor-pointer";
+
+    if (correctionMode && answer.correct && answer.isChecked) {
+      return "border-2 border-green-500 bg-green-300";
     }
-    if (answer.correct && !answer.isChecked) {
-      return "orange";
+    if (correctionMode && answer.correct && !answer.isChecked) {
+      return "bg-orange-300";
     }
-    if (answer.isChecked) {
-      return "red";
+    if (correctionMode && answer.isChecked) {
+      return "bg-red-500";
     }
   };
 
   if (questions.length === 0) return <h2>Loading...</h2>;
   return (
-    <Card className="min-w-full">
+    <Card className="w-full p-8">
       <QuestionCounter
         questionNumber={currentPage}
         questionsTotal={questions.length}

@@ -1,4 +1,4 @@
-import { Button } from "flowbite-react";
+import { Button, Card } from "flowbite-react";
 import Answer from "../domain/Answer";
 import { Question } from "../domain/Question";
 import Explanation from "./Explanation";
@@ -36,20 +36,25 @@ function QuestionCard(props: Props) {
       </p>
       <ul>
         {props.actualQuestion.answers.map((x: Answer, index: number) => (
-          <li
-            key={index}
-            style={{
-              backgroundColor: props.answerStyle(x),
-            }}
-          >
-            <input
-              type="checkbox"
-              checked={x.isChecked}
-              onChange={() => props.handleCheck(x)}
-              name="{index}"
-              id={index.toString()}
-            />
-            {x.answer}
+          <li key={index}>
+            <Card
+              onClick={() => props.handleCheck(x)}
+              className={` rounded-full w-full my-3 h-20 ${props.answerStyle(
+                x
+              )}`}
+              // style={{
+              //   backgroundColor: props.answerStyle(x),
+              // }}
+            >
+              {/* <input
+                type="checkbox"
+                checked={x.isChecked}
+                // onChange={() => props.handleCheck(x)}
+                name="{index}"
+                id={index.toString()}
+              /> */}
+              {x.answer}
+            </Card>
           </li>
         ))}
       </ul>
