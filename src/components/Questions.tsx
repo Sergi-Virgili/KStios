@@ -59,8 +59,9 @@ function Questions() {
     <>
       <Card className="p-0 mt-0 w-full min-h-screen">
         <header className="flex w-full rounded-2xl">
-          <div className=" w-9/12  flex ">
-            <h1 className=" text-pink-600  font-bold text-3xl">Qyz</h1>
+          <div className=" w-9/12  flex-column ">
+            <h1 className=" text-pink-600 font-bold text-3xl">Qyz</h1>
+            <h1 className="font-bold text-xl">AWS Practitioner 01</h1>
           </div>
           <div className=" flex  gap-5 mb-4 bg-cyan-950 rounded-2xl text-gray-100 w-3/12  m-0  p-5 justify-end">
             <QuestionCounter
