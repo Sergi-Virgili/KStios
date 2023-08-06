@@ -34,7 +34,7 @@ export const fetchInitQuestions = async (
       );
     });
   });
-  return questions;
+  return questions.sort(() => Math.random() - 0.5);
 };
 
 // class QuestionService {
