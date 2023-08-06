@@ -4,7 +4,7 @@ import { Question } from "../domain/Question";
 import Answer from "../domain/Answer";
 import QuestionCard from "./QuestionCard";
 import QuestionCounter from "./QuestionCounter";
-import { Pagination } from "flowbite-react";
+import { Button, Pagination } from "flowbite-react";
 import { Card } from "flowbite-react";
 import StopWatch from "./StoptWatch";
 import { Iquiz } from "../App";
@@ -13,14 +13,13 @@ function Questions({ quiz }: { quiz: Iquiz }) {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [questionNumber, setCurrentQuestion] = useState(0);
   const [correctionMode, setCorrectionMode] = useState(false);
-
-  const actualQuestion = questions[questionNumber];
   const [currentPage, setCurrentPage] = useState(1);
 
+  const actualQuestion = questions[questionNumber];
+  const isQuizFinished: Boolean = questions.every((x) => x.isSubmitted);
+
   useEffect(() => {
-    fetchInitQuestions(quiz.file).then((data) => {
-      setQuestions(data);
-    });
+    initQuiz();
   }, []);
 
   useEffect(() => {
@@ -84,17 +83,69 @@ function Questions({ quiz }: { quiz: Iquiz }) {
           <Pagination
             currentPage={currentPage}
             onPageChange={(page) => {
-              setCorrectionMode(false);
-              setCurrentPage(page);
-              setCurrentQuestion(page - 1);
+              handleChangePage(page);
             }}
             showIcons
             totalPages={questions.length}
           />
         </section>
+        <div>
+          {!isQuizFinished ? (
+            <Button onClick={handlerFinishQuiz}>Finish Quiz</Button>
+          ) : (
+            <Button onClick={initQuiz}>Restart Quiz</Button>
+          )}
+          <ul className=" flex-wrap flex w-full gap-1">
+            {questions.map((question, index) => (
+              <li key={index}>
+                <a
+                  className={
+                    "flex w-10 h-10 justify-center items-center hover:cursor-pointer hover:bg-pink-300" +
+                    `
+                      
+                      ${
+                        questionNumber === index
+                          ? " bg-pink-300"
+                          : question.isSubmitted
+                          ? question.isQuestionCorrect()
+                            ? " bg-green-300"
+                            : " bg-red-400"
+                          : ""
+                      }
+                      `
+                  }
+                  onClick={() => handleChangePage(index + 1)}
+                >
+                  <p>{index + 1}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Card>
     </>
   );
+
+  function initQuiz() {
+    fetchInitQuestions(quiz.file).then((data) => {
+      setQuestions(data);
+      handleChangePage(1);
+    });
+  }
+
+  function handlerFinishQuiz() {
+    const finishedQuiz: Question[] = questions.map((question) => {
+      question.submit();
+      return question;
+    });
+    setQuestions(finishedQuiz);
+  }
+
+  function handleChangePage(page: number) {
+    setCorrectionMode(false);
+    setCurrentPage(page);
+    setCurrentQuestion(page - 1);
+  }
 }
 
 export default Questions;
