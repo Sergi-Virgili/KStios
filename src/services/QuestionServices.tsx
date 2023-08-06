@@ -7,16 +7,19 @@ import { textToJSON } from "../spikes/realtimeConverter";
 //   .then((response) => {
 //     return response.data.questions;
 //   });
-export const fetchInitialQuestions = fetch("/data/data.txt")
-  .then((res) => res.text())
-  .then((content) => {
-    console.log(textToJSON(content));
-    return textToJSON(content);
-  });
+export const fetchInitialQuestions = (file?: string) =>
+  fetch(file || "/data/data.txt")
+    .then((res) => res.text())
+    .then((content) => {
+      console.log(textToJSON(content));
+      return textToJSON(content);
+    });
 
-export const fetchInitQuestions = async (): Promise<Question[]> => {
+export const fetchInitQuestions = async (
+  file?: string
+): Promise<Question[]> => {
   let questions: Question[] = [];
-  await fetchInitialQuestions.then((data) => {
+  await fetchInitialQuestions(file).then((data) => {
     data.map((x: any) => {
       questions.push(
         new Question(

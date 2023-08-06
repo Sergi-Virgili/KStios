@@ -7,8 +7,9 @@ import QuestionCounter from "./QuestionCounter";
 import { Pagination } from "flowbite-react";
 import { Card } from "flowbite-react";
 import StopWatch from "./StoptWatch";
+import { Iquiz } from "../App";
 
-function Questions() {
+function Questions({ quiz }: { quiz: Iquiz }) {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [questionNumber, setCurrentQuestion] = useState(0);
   const [correctionMode, setCorrectionMode] = useState(false);
@@ -17,7 +18,7 @@ function Questions() {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    fetchInitQuestions().then((data) => {
+    fetchInitQuestions(quiz.file).then((data) => {
       setQuestions(data);
     });
   }, []);
@@ -61,7 +62,7 @@ function Questions() {
         <header className="flex w-full rounded-2xl">
           <div className=" w-9/12  flex-column ">
             <h1 className=" text-pink-600 font-bold text-3xl">Qyz</h1>
-            <h1 className="font-bold text-xl">AWS Practitioner 01</h1>
+            <h1 className="font-bold text-xl">{quiz.title}</h1>
           </div>
           <div className=" flex  gap-5 mb-4 bg-cyan-950 rounded-2xl text-gray-100 w-3/12  m-0  p-5 justify-end">
             <QuestionCounter
