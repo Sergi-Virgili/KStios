@@ -96,14 +96,19 @@ function Questions({ quiz }: { quiz: Iquiz }) {
               <li key={index}>
                 <a
                   className={
-                    "flex w-10 h-10 justify-center items-center hover:cursor-pointer" +
-                    `${
-                      question.isSubmitted
-                        ? question.isQuestionCorrect()
-                          ? " bg-green-500"
-                          : " bg-red-500"
-                        : ""
-                    }`
+                    "flex w-10 h-10 justify-center items-center hover:cursor-pointer hover:bg-pink-300" +
+                    `
+                      
+                      ${
+                        questionNumber === index
+                          ? " bg-pink-300"
+                          : question.isSubmitted
+                          ? question.isQuestionCorrect()
+                            ? " bg-green-300"
+                            : " bg-red-400"
+                          : ""
+                      }
+                      `
                   }
                   onClick={() => handleChangePage(index + 1)}
                 >
