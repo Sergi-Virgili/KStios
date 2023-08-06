@@ -29,7 +29,7 @@ function Questions({ quiz }: { quiz: Iquiz }) {
   }, [questionNumber]);
 
   const handleCheck = (answer: Answer) => {
-    if (actualQuestion.isFull()) return;
+    if (actualQuestion.isFull() && !answer.isChecked) return;
     answer.checkAnswer();
     setQuestions([...questions]);
   };
