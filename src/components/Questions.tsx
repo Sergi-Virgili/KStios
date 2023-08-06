@@ -84,17 +84,44 @@ function Questions({ quiz }: { quiz: Iquiz }) {
           <Pagination
             currentPage={currentPage}
             onPageChange={(page) => {
-              setCorrectionMode(false);
-              setCurrentPage(page);
-              setCurrentQuestion(page - 1);
+              handleChangePage(page);
             }}
             showIcons
             totalPages={questions.length}
           />
         </section>
+        <div>
+          <ul className=" flex-wrap flex w-full gap-1">
+            {questions.map((question, index) => (
+              <li key={index}>
+                <a
+                  className={
+                    "flex w-10 h-10 justify-center items-center hover:cursor-pointer" +
+                    `${
+                      question.isSubmitted
+                        ? question.isQuestionCorrect()
+                          ? " bg-green-500"
+                          : " bg-red-500"
+                        : ""
+                    }`
+                  }
+                  onClick={() => handleChangePage(index + 1)}
+                >
+                  <p>{index + 1}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Card>
     </>
   );
+
+  function handleChangePage(page: number) {
+    setCorrectionMode(false);
+    setCurrentPage(page);
+    setCurrentQuestion(page - 1);
+  }
 }
 
 export default Questions;
