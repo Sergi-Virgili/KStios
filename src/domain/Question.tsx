@@ -43,4 +43,11 @@ export class Question implements IQuestion {
     this.isSubmitted = true;
     this.answers.forEach((x) => (x.isSubmided = true));
   }
+
+  isFull() {
+    return (
+      this.answers.filter((x) => x.isChecked).length >=
+      this.numberOfCorrectAnswers()
+    );
+  }
 }

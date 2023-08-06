@@ -1,4 +1,4 @@
-import { Button, Card } from "flowbite-react";
+import { Button } from "flowbite-react";
 import { Iquiz } from "../App";
 
 const QuizList: Iquiz[] = [

@@ -1,19 +1,14 @@
 import "./App.css";
-import { Button, Flowbite } from "flowbite-react";
+import { Flowbite } from "flowbite-react";
 import Questions from "./components/Questions";
 import QuizSelector from "./components/QuizSelector";
-import { Question } from "./domain/Question";
+
 import { useState } from "react";
 
 export interface Iquiz {
   title: string;
   file: string;
 }
-
-const quizActual: Iquiz = {
-  title: "AWS Cloud Practitioner 1",
-  file: "./data/data.txt",
-};
 
 function App() {
   // useEffect(() => {
