@@ -1,4 +1,4 @@
-import { Button, Card } from "flowbite-react";
+import { Button, Card, Pagination } from "flowbite-react";
 import Answer from "../domain/Answer";
 import { Question } from "../domain/Question";
 import Explanation from "./Explanation";
@@ -8,8 +8,10 @@ interface Props {
   actualQuestion: Question;
   questionNumber: number;
   answerStyle: any;
+  totalPages: number;
   handleSubmit: () => void;
   handleCheck: (answer: Answer) => void;
+  handleChangePage: (page: number) => void;
   correctionMode: boolean;
 }
 
@@ -39,37 +41,40 @@ function QuestionCard(props: Props) {
               className={` rounded-3xl w-full my-3 min-h-20 p-2 ${props.answerStyle(
                 x
               )}`}
-              // style={{
-              //   backgroundColor: props.answerStyle(x),
-              // }}
             >
-              {/* <input
-                type="checkbox"
-                checked={x.isChecked}
-                // onChange={() => props.handleCheck(x)}
-                name="{index}"
-                id={index.toString()}
-              /> */}
               <p>{x.answer}</p>
             </Card>
           </li>
         ))}
       </ul>
-
-      {!props.actualQuestion.isSubmitted ? (
-        <Button onClick={props.handleSubmit} className="my-5 rounded-xl">
-          Envíame
-        </Button>
-      ) : (
-        <Button
-          pill
-          color="pink"
-          onClick={() => setExplainActive(!explainActive)}
-          className="my-5 "
-        >
-          {!explainActive ? <>Explícame</> : <>Ocultame</>}
-        </Button>
-      )}
+      <section className="flex justify-between items-center">
+        {!props.actualQuestion.isSubmitted ? (
+          <>
+            <Button pill onClick={props.handleSubmit}>
+              Envíame
+            </Button>
+          </>
+        ) : (
+          <Button
+            pill
+            color="pink"
+            onClick={() => setExplainActive(!explainActive)}
+            className="my-5 "
+          >
+            {!explainActive ? <>Explícame</> : <>Ocultame</>}
+          </Button>
+        )}
+        <Pagination
+          className="mb-2 p-0"
+          layout="navigation"
+          currentPage={props.questionNumber + 1}
+          onPageChange={(page) => {
+            props.handleChangePage(page);
+          }}
+          showIcons
+          totalPages={props.totalPages}
+        />
+      </section>
       {explainActive ? (
         <Explanation
           explanation={props.actualQuestion.explanation || ""}

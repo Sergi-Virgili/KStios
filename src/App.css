@@ -1,11 +1,16 @@
-/* #root {
+#root {
   margin: 0 auto;
   padding: 0;
-  text-align: center;
-  color: rgb(50, 50, 50);
-  background-color: #fff;
-  height: 100vh;
-} */
+
+  background-color: #efefef;
+  min-height: 100vh;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 /* .card {
   width: 80%;
@@ -46,5 +51,4 @@
   /* align-items: center; */
   /* background-color: #fff; */
   min-height: 100vh;
-  background-color: rgb(203, 203, 203);
 }

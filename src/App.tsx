@@ -37,7 +37,7 @@ function App() {
           <Stopwatch />
         </Navbar> */}
         {quiz.title ? (
-          <header className="p-5 flex justify-end  bg-gray-100">
+          <header className="p-5 flex justify-end">
             <a
               onClick={() => changeQuiz({} as Iquiz)}
               className={

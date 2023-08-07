@@ -4,7 +4,7 @@ import { Question } from "../domain/Question";
 import Answer from "../domain/Answer";
 import QuestionCard from "./QuestionCard";
 import QuestionCounter from "./QuestionCounter";
-import { Button, Pagination } from "flowbite-react";
+import { Button } from "flowbite-react";
 import { Card } from "flowbite-react";
 import StopWatch from "./StoptWatch";
 import { Iquiz } from "../App";
@@ -25,6 +25,7 @@ function Questions({ quiz }: { quiz: Iquiz }) {
   useEffect(() => {
     if (questions.length === 0) return;
     setCorrectionMode(questions[questionNumber].isSubmitted);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [questionNumber]);
 
   const handleCheck = (answer: Answer) => {
@@ -63,7 +64,7 @@ function Questions({ quiz }: { quiz: Iquiz }) {
             <h1 className=" text-pink-600 font-bold text-3xl">Qyz</h1>
             <h1 className="font-bold text-xl">{quiz.title}</h1>
           </div>
-          <div className=" flex  gap-5 mb-4 bg-cyan-950 rounded-2xl text-gray-100 w-3/12  m-0  p-5 justify-end">
+          <div className=" md:flex  gap-5 mb-4 bg-cyan-950 rounded-2xl text-gray-100 w-3/12 p-2 md:p-5 justify-end ">
             <QuestionCounter
               questionNumber={currentPage}
               questionsTotal={questions.length}
@@ -75,19 +76,22 @@ function Questions({ quiz }: { quiz: Iquiz }) {
           actualQuestion={actualQuestion}
           correctionMode={correctionMode}
           questionNumber={questionNumber}
+          totalPages={questions.length}
           answerStyle={answerStyle}
           handleSubmit={handleSubmit}
           handleCheck={handleCheck}
+          handleChangePage={handleChangePage}
         ></QuestionCard>
         <section>
-          <Pagination
+          {/* <Pagination
+            layout="navigation"
             currentPage={currentPage}
             onPageChange={(page) => {
               handleChangePage(page);
             }}
             showIcons
             totalPages={questions.length}
-          />
+          /> */}
         </section>
         <div>
           {!isQuizFinished ? (
