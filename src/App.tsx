@@ -4,6 +4,7 @@ import Questions from "./components/Questions";
 import QuizSelector from "./components/QuizSelector";
 
 import { useState } from "react";
+import TransitionSpike from "./components/TransitionSpike";
 
 export interface Iquiz {
   title: string;
@@ -25,6 +26,7 @@ function App() {
   return (
     <div className="app">
       <Flowbite>
+        <TransitionSpike />
         {/* <DarkThemeToggle /> */}
         {/* <DefaultSidebar /> */}
         {/* <Navbar fluid rounded>
