@@ -94,12 +94,7 @@ function Questions({ quiz }: { quiz: Iquiz }) {
           /> */}
         </section>
         <div>
-          {!isQuizFinished ? (
-            <Button onClick={handlerFinishQuiz}>Finish Quiz</Button>
-          ) : (
-            <Button onClick={initQuiz}>Restart Quiz</Button>
-          )}
-          <ul className=" flex-wrap flex w-full gap-1">
+          <ul className=" flex-wrap flex w-full gap-1 mb-8">
             {questions.map((question, index) => (
               <li key={index}>
                 <a
@@ -125,6 +120,15 @@ function Questions({ quiz }: { quiz: Iquiz }) {
               </li>
             ))}
           </ul>
+          <div className="flex justify-end ">
+            {!isQuizFinished ? (
+              <Button color="pink" onClick={handlerFinishQuiz}>
+                Finish Quiz
+              </Button>
+            ) : (
+              <Button onClick={initQuiz}>Restart Quiz</Button>
+            )}
+          </div>
         </div>
       </Card>
     </>
