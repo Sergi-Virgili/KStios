@@ -21,13 +21,13 @@ function QuestionCard(props: Props) {
     setExplainActive(false);
   }, [props.actualQuestion]);
   // setExplainActive(false);
-  function resultAvise() {
-    if (!props.correctionMode) return "";
-    return props.actualQuestion.isQuestionCorrect() ? <p>OK</p> : <p>FAILED</p>;
-  }
+  // function resultAvise() {
+  //   if (!props.correctionMode) return "";
+  //   return props.actualQuestion.isQuestionCorrect() ? <p>OK</p> : <p>FAILED</p>;
+  // }
   return (
     <article className="min-w-full">
-      {resultAvise()}
+      {/* {resultAvise()} */}
 
       <p className=" text-gray-700 dark:text-gray-400 mb-5">
         {parse(props.actualQuestion.question)}{" "}
@@ -59,7 +59,6 @@ function QuestionCard(props: Props) {
             pill
             color="pink"
             onClick={() => setExplainActive(!explainActive)}
-            className="my-5 "
           >
             {!explainActive ? <>Explícame</> : <>Ocultame</>}
           </Button>

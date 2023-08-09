@@ -17,6 +17,10 @@ function Questions({ quiz }: { quiz: Iquiz }) {
 
   const actualQuestion = questions[questionNumber];
   const isQuizFinished: Boolean = questions.every((x) => x.isSubmitted);
+  const percent =
+    (questions.filter((x) => x.isQuestionCorrect()).length / questions.length) *
+    100;
+  // const percent = 95.55423;
 
   useEffect(() => {
     initQuiz();
@@ -120,13 +124,20 @@ function Questions({ quiz }: { quiz: Iquiz }) {
               </li>
             ))}
           </ul>
-          <div className="flex justify-end ">
+          <div className="flex  items-center ">
             {!isQuizFinished ? (
-              <Button color="pink" onClick={handlerFinishQuiz}>
+              <Button color="pink" pill onClick={handlerFinishQuiz}>
                 Finish Quiz
               </Button>
             ) : (
-              <Button onClick={initQuiz}>Restart Quiz</Button>
+              <div className="flex justify-start bg-red-50 rounded-3xl">
+                <p className="text-pink-600 font-bold text-xl center mx-8 p-2">
+                  {percent.toFixed(2)} %
+                </p>
+                <Button pill color="pink" onClick={initQuiz}>
+                  Restart Quiz
+                </Button>
+              </div>
             )}
           </div>
         </div>
