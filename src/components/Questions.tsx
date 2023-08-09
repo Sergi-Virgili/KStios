@@ -52,10 +52,10 @@ function Questions({ quiz }: { quiz: Iquiz }) {
       return "border-2 border-green-500 bg-green-300";
     }
     if (correctionMode && answer.correct && !answer.isChecked) {
-      return "bg-orange-300";
+      return "bg-green-100";
     }
-    if (correctionMode && answer.isChecked) {
-      return "bg-red-500";
+    if (correctionMode && answer.isChecked && !answer.correct) {
+      return "bg-red-300 border-2 border-red-500";
     }
   };
 
