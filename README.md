@@ -20,3 +20,7 @@ https://k-stios.vercel.app
 2. Run `npm install`
 3. Run `npm run dev`
 
+## Run tests
+
+Run `npm run test`
+
