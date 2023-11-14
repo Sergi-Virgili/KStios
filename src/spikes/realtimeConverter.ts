@@ -1,5 +1,5 @@
 export function textToJSON(texto: string) {
-  let questions = texto
+  const questions = texto
     .replaceAll(/\*/g, "")
     .replaceAll("[ ]", "")
     .split("Pregunta")
@@ -18,8 +18,8 @@ export function textToJSON(texto: string) {
         .split("•")
         .filter((_x: string, index: number) => index != 0)
         .map((answer: string) => {
-          let isCorrect = answer.includes("(Correcto)");
-          let texto = answer
+          const isCorrect = answer.includes("(Correcto)");
+          const texto = answer
             .replaceAll("\n", "")
             .trim()
             .replace("(Correcto)", "");
