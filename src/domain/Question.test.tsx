@@ -17,18 +17,18 @@ const createSingleAnswerQuestion = () => {
 
 describe("Question", () => {
   it("should be multi answer", () => {
-    let sut = createMultiAnswerQuestion().numberOfCorrectAnswers();
+    const sut = createMultiAnswerQuestion().numberOfCorrectAnswers();
     expect(sut).toBe(2);
   });
 
   it("should be single answer", () => {
-    let sut = createSingleAnswerQuestion().numberOfCorrectAnswers();
+    const sut = createSingleAnswerQuestion().numberOfCorrectAnswers();
     expect(sut).toBe(1);
   });
 
   it("try if answer is correct for a question", () => {
     const question: Question = createSingleAnswerQuestion();
-    let sut = createSingleAnswerQuestion().isAnswerCorrect(question.answers[0]);
+    const sut = createSingleAnswerQuestion().isAnswerCorrect(question.answers[0]);
 
     expect(sut).toBe(true);
   });
@@ -36,7 +36,7 @@ describe("Question", () => {
   it("try if question is correct in a single question", () => {
     const question: Question = createSingleAnswerQuestion();
     question.answers[0].isChecked = true;
-    let sut = question.isQuestionCorrect();
+    const sut = question.isQuestionCorrect();
 
     expect(sut).toBe(true);
   });
