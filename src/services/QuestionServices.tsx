@@ -18,7 +18,7 @@ export const fetchInitialQuestions = (file?: string) =>
 export const fetchInitQuestions = async (
   file?: string
 ): Promise<Question[]> => {
-  let questions: Question[] = [];
+  const questions: Question[] = [];
   await fetchInitialQuestions(file).then((data) => {
     data.map((x: any) => {
       questions.push(
