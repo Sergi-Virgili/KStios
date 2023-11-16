@@ -38,16 +38,13 @@ const QuizList = [
 
 export class FileQuestionRepository implements QuestionRepository {
 
-    private fetchInitialQuestions = (file?: string) =>
-        fetch(file || "/data/data.txt")
+    private fetchInitialQuestions = (file?: string) => fetch(file || "/data/data.txt")
             .then((res) => res.text())
             .then((content) => {
                 return textToJSON(content);
             });
 
-    public fetchInitQuestions = async (
-        file?: string
-    ): Promise<Question[]> => {
+    public fetchInitQuestions = async (file?: string) : Promise<Question[]> => {
         const questions: Question[] = [];
         await this.fetchInitialQuestions(file).then((data) => {
             data.map((x: any) => {
@@ -67,12 +64,12 @@ export class FileQuestionRepository implements QuestionRepository {
         return questions.sort(() => Math.random() - 0.5);
     };
 
-    private fetchAllQuestions = async () : Promise<Question[]> => {
-        const questionsList =  QuizList.map(async (quiz) => await this.fetchInitQuestions(quiz.file));
+    private fetchAllQuestions = async (): Promise<Question[]> => {
+        const questionsList = QuizList.map(async (quiz) => await this.fetchInitQuestions(quiz.file));
         const questions = (await Promise.all(questionsList)).flat();
         return questions;
-   }
-    
+    }
+
     public fetchRandomQuestions = async (): Promise<Question[]> => {
         // TODO classify questions by category and return a random questions.
         const questions = (await this.fetchAllQuestions()).sort(() => Math.random() - 0.5);
