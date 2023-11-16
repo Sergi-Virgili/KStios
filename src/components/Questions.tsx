@@ -8,6 +8,8 @@ import { Button } from "flowbite-react";
 import { Card } from "flowbite-react";
 import StopWatch from "./StoptWatch";
 import { Iquiz } from "../App";
+import { FileQuestionRepository } from "../repositories/FileQuestionRepository";
+import { QuestionServices } from "../services/QuestionServices";
 
 function Questions({ quiz }: { quiz: Iquiz }) {
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -16,7 +18,7 @@ function Questions({ quiz }: { quiz: Iquiz }) {
   const [currentPage, setCurrentPage] = useState(1);
 
   const actualQuestion = questions[questionNumber];
-  const isQuizFinished: Boolean = questions.every((x) => x.isSubmitted);
+  const isQuizFinished: boolean = questions.every((x) => x.isSubmitted);
   const percent =
     (questions.filter((x) => x.isQuestionCorrect()).length / questions.length) *
     100;
@@ -146,7 +148,9 @@ function Questions({ quiz }: { quiz: Iquiz }) {
   );
 
   function initQuiz() {
-    fetchInitQuestions(quiz.file).then((data) => {
+    const questionRepository = new FileQuestionRepository()
+    const questionService = new QuestionServices(questionRepository);
+    questionService.fetchInitQuestions(quiz.file).then((data) => {
       setQuestions(data);
       handleChangePage(1);
     });
