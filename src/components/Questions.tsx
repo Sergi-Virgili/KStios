@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { fetchInitQuestions } from "../services/QuestionServices";
 import { Question } from "../domain/Question";
 import Answer from "../domain/Answer";
 import QuestionCard from "./QuestionCard";
