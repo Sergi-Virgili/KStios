@@ -14,6 +14,7 @@ export class QuestionServices {
   }
 
   //TODO: implement this
-  // fetchRandomQuestions = async (file: string): Promise<Question[]> => {
-
+  fetchRandomQuestions = async (): Promise<Question[]> => {
+      return await this.questionRepository.fetchRandomQuestions();
+  }
 }

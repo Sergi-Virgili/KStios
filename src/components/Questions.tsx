@@ -146,13 +146,18 @@ function Questions({ quiz }: { quiz: Iquiz }) {
     </>
   );
 
-  function initQuiz() {
+  async function initQuiz() {
     const questionRepository = new FileQuestionRepository()
     const questionService = new QuestionServices(questionRepository);
-    questionService.fetchInitQuestions(quiz.file).then((data) => {
-      setQuestions(data);
-      handleChangePage(1);
-    });
+    let data;
+    if (quiz.file === "random") { 
+       data = await questionService.fetchRandomQuestions();
+    }
+    else {
+       data = await questionService.fetchInitQuestions(quiz.file)
+    }
+    setQuestions(data);
+    handleChangePage(1);
   }
 
   function handlerFinishQuiz() {
