@@ -1,6 +1,6 @@
 import { Question } from "../domain/Question";
 import { QuestionRepository } from "./QuestionRepository";
-import { textToJSON } from "../spikes/realtimeConverter";
+import { textToJSON, textToJSON2 } from "../spikes/realtimeConverter";
 import Answer from "../domain/Answer";
 
 const QuizList = [
@@ -34,6 +34,11 @@ const QuizList = [
         title: "AWS Cloud Practitioner 6",
         file: "./data/data6.txt",
     },
+    // {
+    //     id: 7,
+    //     title: "AWS Cloud Practitioner C02 - 1",
+    //     file: "./data/C02/data7.txt",
+    // },
 ];
 
 export class FileQuestionRepository implements QuestionRepository {
@@ -47,21 +52,10 @@ export class FileQuestionRepository implements QuestionRepository {
     public fetchInitQuestions = async (file?: string) : Promise<Question[]> => {
         const questions: Question[] = [];
         await this.fetchInitialQuestions(file).then((data) => {
-            data.map((x: any) => {
-                questions.push(
-                    new Question(
-                        x.question,
-                        x.answers.map(
-                            (y: any) => new Answer(1, y.answer, y.correct, y.feedback)
-                        ),
-                        x.explanation,
-                        x.incorrect,
-                        x.references
-                    )
-                );
-            });
+            this.convertToDomain(data, questions);
         });
-        return questions.sort(() => Math.random() - 0.5);
+        // return questions.sort(() => Math.random() - 0.5);
+        return questions
     };
 
     private fetchAllQuestions = async (): Promise<Question[]> => {
@@ -74,5 +68,37 @@ export class FileQuestionRepository implements QuestionRepository {
         // TODO classify questions by category and return a random questions.
         const questions = (await this.fetchAllQuestions()).sort(() => Math.random() - 0.5);
         return questions.slice(0, 65);
+    }
+
+    private fetchInitialQuestionsc02 = (file: string) => fetch(file || "/data/data.txt")
+            .then((res) => res.text())
+            .then((content) => {
+                return textToJSON2(content);
+            });
+
+    public fetchQuestionsC02 = async (file: string): Promise<Question[]> => {
+        console.log("fetchQuestionsC02");
+        const questions: Question[] = [];
+        await this.fetchInitialQuestionsc02(file).then((data) => {
+            this.convertToDomain(data, questions);
+        });
+        // return questions.sort(() => Math.random() - 0.5);
+        return questions
+    }
+
+    private convertToDomain(data: { question: string; answers: { answer: string; correct: boolean; }[]; explanation: string; incorrect: string; references: string; }[], questions: Question[]) {
+        data.map((x: any) => {
+            questions.push(
+                new Question(
+                    x.question,
+                    x.answers.map(
+                        (y: any) => new Answer(1, y.answer, y.correct, y.feedback)
+                    ),
+                    x.explanation,
+                    x.incorrect,
+                    x.references
+                )
+            );
+        });
     }
 }

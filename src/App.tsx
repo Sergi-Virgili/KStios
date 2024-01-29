@@ -8,6 +8,7 @@ import { useState } from "react";
 export interface Iquiz {
   title: string;
   file: string;
+  type: string;
 }
 
 function App() {

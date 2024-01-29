@@ -13,8 +13,11 @@ export class QuestionServices {
     return await this.questionRepository.fetchInitQuestions(file);
   }
 
-  //TODO: implement this
   fetchRandomQuestions = async (): Promise<Question[]> => {
       return await this.questionRepository.fetchRandomQuestions();
+  }
+
+  fetchQuestionsC02 = async (file:string): Promise<Question[]> => {
+      return await this.questionRepository.fetchQuestionsC02(file);
   }
 }

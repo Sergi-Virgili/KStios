@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { Question } from "../domain/Question";
 import Answer from "../domain/Answer";
 import QuestionCard from "./QuestionCard";
@@ -149,12 +149,15 @@ function Questions({ quiz }: { quiz: Iquiz }) {
   async function initQuiz() {
     const questionRepository = new FileQuestionRepository()
     const questionService = new QuestionServices(questionRepository);
-    let data;
+    let data: SetStateAction<Question[]> = [];
     if (quiz.file === "random") { 
        data = await questionService.fetchRandomQuestions();
     }
-    else {
+    if (quiz.type === "C01") {
        data = await questionService.fetchInitQuestions(quiz.file)
+    }
+    if (quiz.type === "C02") {
+      data = await questionService.fetchQuestionsC02(quiz.file)
     }
     setQuestions(data);
     handleChangePage(1);
