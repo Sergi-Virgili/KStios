@@ -1,0 +1,808 @@
+[
+  {
+    "question": "<p> You have been tasked with delegate administrative access to your company's Azure key vault. </p><p> You have to make sure that a specific user can set advanced access policies for the key vault. You also have to make sure that access is assigned based on the principle of least privilege. </p><p> Which of the following options should you use to achieve your goal? </p>",
+    "answers": [
+      { "answer": "Azure DevOps", "correct": false },
+      { "answer": "RBAC", "correct": true },
+      {
+        "answer": "Azure AD Privileged Identity Management (PIM)",
+        "correct": false
+      },
+      { "answer": "Azure Information Protection", "correct": false }
+    ],
+    "explanation": "<p> Authorization determines which operations the caller can perform. Authorization in Key Vault uses a combination of Azure role-based access control (Azure RBAC) and Azure Key Vault access policies. </p><p><br>Reference:<br>https://docs.microsoft.com/en-us/azure/key-vault/key-vault-secure-your-key-vault </p>"
+  },
+  {
+    "question": "<p> You are an Microsoft 365 Global administrator at an organization that has an Azure Active Directory (Azure AD) tenant with Microsoft Defender for Office 365 Plan 2. </p><p> You need to allow some of your users to create and manage all aspects of attack simulation campaigns. </p><p>Which role should you assign to those users?</p><p>Choose the correct answer</p><p><br></p>",
+    "answers": [
+      { "answer": "Attack Simulator Administrators", "correct": true },
+      { "answer": "Security operator", "correct": false },
+      { "answer": "Compliance data administrator", "correct": false },
+      { "answer": "Attack Simulator Payload Authors", "correct": false }
+    ],
+    "explanation": "<p> You should assign the Attack Simulator Administrators role. This role allows to create and manage all aspects of attack simulation campaigns. </p><p> You should not assign the Attack Simulator Payload Authors role. This role allows to create and manage attack payloads that can be deployed by attack simulator administrator. </p><p> You should not assign the Compliance administrator role. Members assigned to this role can manage the settings for device management, data loss prevention, reports, and preservation. </p><p> You should not assign the Compliance data administrator role. Members assigned to this role can manage the settings for device management, data protection, data loss prevention, reports, and preservation. </p><p> You should not assign the Security operator role.\\embers assigned to this role can manage security alerts and also view reports and settings of security fees. </p>"
+  },
+  {
+    "question": "<p> Your team needs to develop an Azure Function that will be used to create an Azure storage account. Permissions must be given to the Azure Function for this requirement. You need to grant the required privileges with the least amount of administrative overhead. </p><p> Which of the following would you configure for the Azure Function? </p>",
+    "answers": [
+      { "answer": "An Azure AD user group", "correct": false },
+      { "answer": "A system-assigned managed identity", "correct": true },
+      { "answer": "An Azure AD user account", "correct": false },
+      { "answer": "A user-assigned managed identity", "correct": false }
+    ],
+    "explanation": "<p> Here we can assign a system-assigned identity. This identity can then be given access to create the storage account. Since we need to reduce the administrative overhead, we don’t need the burden of managing a user-assigned managed identity. </p>"
+  },
+  {
+    "question": "<p> Your company has a set of Azure virtual machines. The Azure virtual machines are part of a subnet named SubnetA within a virtual network named app-network. A Network security group named app-nsg is attached to SubnetA. The company wants to ensure that IT Administrators request for RDP access to the virtual machines. Also, the access is granted , the administrators will only have a duration of 2 hours during which they can RDP into the virtual machines. Which of the following can be used for this requirement? </p><p><br></p><p> RDP into the virtual machines. Which of the following can be used for this requirement? </p>",
+    "answers": [
+      { "answer": "Azure AD Conditional Access Policy", "correct": false },
+      {
+        "answer": "Microsoft Defender for Cloud – Just In time VM access",
+        "correct": true
+      },
+      {
+        "answer": "Azure AD Privileged Identity Management&nbsp;",
+        "correct": false
+      },
+      { "answer": "Azure Bastion Service", "correct": false }
+    ],
+    "explanation": "<p> To request for RDP connections onto Azure virtual machines, you can make use Microsoft Defender for Cloud – Just In time VM access. </p><p> For more information on Microsoft Defender for Cloud – Just In time VM access, one can visit the below URL </p><p> https://docs.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-usage </p>"
+  },
+  {
+    "question": "<p> You have a hybrid configuration of Azure Active Directory (Azure AD). You have an Azure HDInsight cluster on a virtual network. You plan to allow users to authenticate to the cluster by using their on-premises Active Directory credentials. You need to configure the environment to support the planned authentication. Solution: You deploy Azure Active Directory Domain Services (Azure AD DS) to the Azure subscription. Does this meet the goal? </p><p><br></p>",
+    "answers": [
+      { "answer": "Yes", "correct": false },
+      { "answer": "No", "correct": true }
+    ],
+    "explanation": "<p> Instead, you connect HDInsight to your on-premises network by using Azure Virtual Networks and a VPN gateway. Note: To allow HDInsight and resources in the joined network to communicate by name, you must perform the following actions: Create Azure Virtual Network. Create a custom DNS server in the Azure Virtual Network. Configure the virtual network to use the custom DNS server instead of the default Azure Recursive Resolver. Configure forwarding between the custom DNS server and your on-premises DNS server. Reference: https://docs.microsoft.com/en-us/azure/hdinsight/connect-on-premises-network </p>"
+  },
+  {
+    "question": "<p> You have an Azure subscription that contains the virtual networks shown in the following table.<br></p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_21-03-17-09bedb0c9c76726cbfa8f79d2d7ff39d.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_21-03-17-09bedb0c9c76726cbfa8f79d2d7ff39d.JPG\" alt=\"\" loading=\"eager\"></div></span><p><br>The Azure virtual machines on SpokeVNetSubnet0 can communicate with the computers on the on-premises network.<br>You plan to deploy an Azure firewall to HubVNet.<br>You create the following two routing tables:<br>• RT1: Includes a user-defined route that points to the private IP address of the Azure firewall as a next hop address<br>• RT2: Disables BGP route propagation and defines the private IP address of the Azure firewall as the default gateway<br>You need to ensure that traffic between SpokeVNetSubnet0 and the on-premises network flows through the Azure firewall.<br>To which subnet should you associate each route table? To answer, drag the appropriate subnets to the correct route tables. Each subnet may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.<br>NOTE: Each correct selection is worth one point.<br>Select and Place:<br></p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_21-03-17-e99582eb8a666ac71156e6189a59ea73.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_21-03-17-e99582eb8a666ac71156e6189a59ea73.JPG\" alt=\"\" loading=\"eager\"></div></span>",
+    "answers": [
+      { "answer": "SpokeVNetSubnet0AzureFirewallSubnet", "correct": false },
+      { "answer": "AzureFirewallSubnetSpokeVNetSubnet0", "correct": false },
+      { "answer": "GatewaySubnetAzureFirewallSubnet", "correct": false },
+      { "answer": "GatewaySubnetSpokeVNetSubnet0", "correct": true }
+    ],
+    "explanation": "<p> There are three key requirements for this scenario to work correctly: </p><p> - A User Defined Route (UDR) on the spoke subnet that points to the Azure Firewall IP address as the default gateway. Virtual network gateway route propagation must be Disabled on this route table. </p><p> - A UDR on the hub gateway subnet must point to the firewall IP address as the next hop to the spoke networks. </p><p> No UDR is required on the Azure Firewall subnet, as it learns routes from BGP. </p><p> - Make sure to set AllowGatewayTransit when peering VNet-Hub to VNet-Spoke and UseRemoteGateways when peering VNet-Spoke to VNet-Hub. </p><p>Reference:</p><p> https://docs.microsoft.com/en-us/azure/firewall/tutorial-hybrid-ps </p><p> https://docs.microsoft.com/en-us/azure/firewall/tutorial-hybrid-portal#create-the-routes </p>"
+  },
+  {
+    "question": "<p> Your company has an Azure General Purpose V2 storage account. They also have a key vault defined as part of their subscription. They want to ensure that data in the storage account is encrypted with the use of an encryption key created in the Azure Key vault resource. Which of the following services support the use of customer managed keys? Choose 2 answers from the options given below </p><p><br></p>",
+    "answers": [
+      { "answer": "Azure Table storage", "correct": false },
+      { "answer": "Azure Blob storage", "correct": true },
+      { "answer": "Azure File storage", "correct": true },
+      { "answer": "Azure Queue storage", "correct": false }
+    ],
+    "explanation": "<p><br></p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_00-57-55-87f4cb956cd4565b6e4ec31b5189bc2e.JPG\">"
+  },
+  {
+    "question": "<p>Your team has the following Azure storage account</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_18-57-48-9ca12a31cdca8ce189c54ce18cb4cf8f.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_18-57-48-9ca12a31cdca8ce189c54ce18cb4cf8f.JPG\" alt=\"\" loading=\"eager\"></div></span><p> You have to ensure that blobs uploaded to the storage account are prevented from being modified. Which of the following can you set for this requirement? </p>",
+    "answers": [
+      {
+        "answer": "Add an access policy to the container that would contain the blob objects",
+        "correct": true
+      },
+      {
+        "answer": "Modify the IAM Access Control settings for the storage account",
+        "correct": false
+      },
+      {
+        "answer": "Change the Access tier of the storage account",
+        "correct": false
+      },
+      {
+        "answer": "Change the Account kind of the storage account",
+        "correct": false
+      }
+    ],
+    "explanation": "<p> You can define immutable blobs wherein they can’t be modified with the use of Access policies </p><p> For more information on Immutable blob storage , one can visit the below URL </p><p> https://docs.microsoft.com/en-us/azure/storage/blobs/immutable-storage-overview </p>"
+  },
+  {
+    "question": "<img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_21-29-19-cac7b437af7fb26e64ac9ed88b8d38df.png\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_21-29-19-cac7b437af7fb26e64ac9ed88b8d38df.png\" alt=\"\" loading=\"eager\"></div></span><p> Watashi, Inc. is a digital media company that has 500 employees in the Chicago area and 20 employees in the San Francisco area. </p><p><br></p><p>Existing Environment -</p><p> Watashi has an Azure subscription named Sub1 that has a subscription ID of 43894a43-17c2-4a39-8cfc-3540c2653ef4. </p><p> Sub1 is associated to an Azure Active Directory (Azure AD) tenant named watashi.com. The tenant contains the user objects and the device objects of all the </p><p> Watashi employees and their devices. Each user is assigned an Azure AD Premium P2 license. Azure AD Privileged Identity Management (PIM) is activated. </p><p>The tenant contains the groups shown in the following table.</p><p><br></p><p><img src=\"downloaded_images/Azure_AZ500_03/2021-08-29_13-21-19-279f8bd095ec81611dd208d50a6e195f.png\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2021-08-29_13-21-19-279f8bd095ec81611dd208d50a6e195f.png\" alt=\"\" loading=\"eager\"></div><p></p><p><br></p><p> The Azure subscription contains the objects shown in the following table. </p><p><br></p><p><br></p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_21-29-19-85eef88485e6a95d210719bce7f20689.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_21-29-19-85eef88485e6a95d210719bce7f20689.JPG\" alt=\"\" loading=\"eager\"></div></span><p>Identity and Access Requirements</p><p>Azure Security Center is set to the Standard tier.</p><p><br></p><p><strong>Requirements -</strong></p><p><br></p><p><strong>Planned Changes -</strong></p><p> Watashi&nbsp; plans to deploy the Azure resources shown in the following table. </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_21-29-19-297da8d3a0e2df631c3a234073b48ba9.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_21-29-19-297da8d3a0e2df631c3a234073b48ba9.JPG\" alt=\"\" loading=\"eager\"></div></span><p> Watashi identifies the following identity and access requirements: </p><p> All San Francisco users and their devices must be members of Group1. </p><p> The members of Group2 must be assigned the Contributor role to RG2 by using a permanent eligible assignment. </p><p> Users must be prevented from registering applications in Azure AD and from consenting to applications that access company information on the users behalf. </p><p><strong>Platform Protection Requirements</strong></p><p> Watashi identifies the following platform protection requirements: </p><p> Microsoft Antimalware must be installed on the virtual machines in RG1. </p><p> The members of Group2 must be assigned the Azure Kubernetes Service Cluster Admin Role. </p><p> Azure AD users must be able to authenticate to AKS1 by using their Azure AD credentials. </p><p> Following the implementation of the planned changes, the IT team must be able to connect to VM0 by using JIT VM access. </p><p> A new custom RBAC role named Role1 must be used to delegate the administration of the managed disks in RG1. Role1 must be available only for RG1. </p><p><strong>Security Operations Requirements</strong></p><p> Watashi must be able to customize the operating system security configurations in Azure Security Center. </p><p>Data and Application Requirements</p><p> Watashi identifies the following data and applications requirements: </p><p> The users in Group2 must be able to authenticate to SQLDB1 by using their Azure AD credentials. </p><p>WebApp1 must enforce mutual authentication.</p><p><br></p><p><strong>General Requirements -</strong></p><p>Watashi identifies the following general requirements:</p><p>Whenever possible, administrative effort must be minimized.</p><p>Whenever possible, use of automation must be maximized.</p><p><br></p><p><strong>Question</strong></p><p> You need to deploy AKS1 to meet the platform protection requirements. </p><p> Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order. </p><p> NOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select. </p><p>Select and Place:</p><p><br></p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_21-29-19-3b36917d5b205d9991587662326d9576.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_21-29-19-3b36917d5b205d9991587662326d9576.JPG\" alt=\"\" loading=\"eager\"></div></span>",
+    "answers": [
+      {
+        "answer": "Create a custom RBAC role.Create an RBAC binding.Create a client application.Create a server application.",
+        "correct": false
+      },
+      {
+        "answer": "Create a server application.Create a client application.Deploy an AKS cluster.Create an RBAC binding.",
+        "correct": true
+      },
+      {
+        "answer": "Deploy an AKS cluster.Create a server application.Create a client application.Create a custom RBAC role.",
+        "correct": false
+      }
+    ],
+    "explanation": "<p> Scenario: Azure AD users must be able to authenticate to AKS1 by using their Azure AD credentials. </p><p> Watashi plans to deploy AKS1, which is a managed AKS (Azure Kubernetes Services) cluster. </p><p>Step 1: Create a server application</p><p> To provide Azure AD authentication for an AKS cluster, two Azure AD applications are created. The first application is a server component that provides user authentication. </p><p>Step 2: Create a client application</p><p> The second application is a client component that's used when you're prompted by the CLI for authentication. This client application uses the server application for the actual authentication of the credentials provided by the client. </p><p>Step 3: Deploy an AKS cluster.</p><p> Use the az group create command to create a resource group for the AKS cluster. </p><p>Use the az aks create command to deploy the AKS cluster.</p><p>Step 4: Create an RBAC binding.</p><p> Before you use an Azure Active Directory account with an AKS cluster, you must create role-binding or cluster role-binding. Roles define the permissions to grant, and bindings apply them to desired users. These assignments can be applied to a given namespace, or across the entire cluster. </p><p>Reference:</p><p>https://docs.microsoft.com/en-us/azure/aks/azure-ad-integration</p>"
+  },
+  {
+    "question": "<p> Your company currently has an Azure subscription and an Azure AD tenant. The company is planning on setting up separate subscriptions for a number of teams in the company. It needs to be ensured that locks are applied across appropriately across the various subscriptions. And this needs to be carried out in a consistent manner. Which of the following can be used for this requirement? </p>",
+    "answers": [
+      { "answer": "Azure Blueprints", "correct": true },
+      { "answer": "Azure Identity Management", "correct": false },
+      { "answer": "Azure Policy", "correct": false },
+      { "answer": "Azure Privileged Identity Management", "correct": false }
+    ],
+    "explanation": "<p> You can deploy resources across various subscriptions and also apply resource locks accordingly with the use of Azure Blueprints. </p><p> For more information on resource locks in Azure Blueprints, one can visit the below URL </p><p> https://docs.microsoft.com/en-us/azure/governance/blueprints/concepts/resource-locking </p>"
+  },
+  {
+    "question": "<p> Your company has an Azure AD tenant and an Azure subscription in place. They have the following custom roles defined </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-48-38-8e8f08d518d5bbb2339bfd19273250aa.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-48-38-8e8f08d518d5bbb2339bfd19273250aa.JPG\" alt=\"\" loading=\"eager\"></div></span><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-48-38-5dfede83c5c08d13d749235aa702f464.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-48-38-5dfede83c5c08d13d749235aa702f464.JPG\" alt=\"\" loading=\"eager\"></div></span><p>You have to create the following roles</p><p>1) UserAdminRole – This will be in Azure AD</p><p> 2) UserReaderCustom – This will be at the Azure Subscription level </p><p>Can you create the UserReaderCustom based on a built-in role?</p><p><br></p><p><br></p>",
+    "answers": [
+      { "answer": "No", "correct": false },
+      { "answer": "Yes", "correct": true }
+    ],
+    "explanation": "<img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-48-39-acf94bd908a9815a56bfc0ce3de74c00.JPG\"><p> Yes, when you create a role , it can be based on an existing role. </p>"
+  },
+  {
+    "question": "<p> Your company has a set of Azure virtual machines. They want to ensure that only authorized applications are running on the Azure virtual machines. Which of the following can be used for this requirement? </p>",
+    "answers": [
+      { "answer": "Azure AD Identity Protection", "correct": false },
+      { "answer": "Azure Policies", "correct": false },
+      { "answer": "Azure AD Privileged Identity Management", "correct": false },
+      {
+        "answer": "Microsoft Defender for Cloud – Adaptive application controls",
+        "correct": true
+      }
+    ],
+    "explanation": "<p> You can make use of Adaptive application controls in Microsoft Defender for Cloud for this purpose. </p><p> For more information on adaptive application controls, one can visit the below URL </p><p> https://docs.microsoft.com/en-us/azure/defender-for-cloud/adaptive-application-controls </p>"
+  },
+  {
+    "question": "<p>Your company has the following Azure virtual machines</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-00-50-773ca30d074abd76ac2ce99c0ad873c1.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-00-50-773ca30d074abd76ac2ce99c0ad873c1.JPG\" alt=\"\" loading=\"eager\"></div></span><p> A Network security group named app-nsg3 is assigned to app-network3/SubnetA </p><p>Can you enable just in time (JIT) VM access for appvm3?</p>",
+    "answers": [
+      { "answer": "Yes", "correct": true },
+      { "answer": "No", "correct": false }
+    ],
+    "explanation": "<p> Since there is a network security group assigned to the subnet containing appvm3, you can enable just in time (JIT) VM access. </p>"
+  },
+  {
+    "question": "<p> A company has over a hundred Windows Server 2016 VMs running in the Azure West Europe region. Machines start and stop automatically by using an Azure Automation runbook, and updates are managed by using Azure Update Management. </p><p> You learn of a Microsoft security vulnerability that affects the Windows Server 2016 operating system. The vulnerability is fixed by installing a hotfix. </p><p> You need to create a report of the systems that do not have the hotfix installed. </p><p>What should you do to generate the report?</p><p>Choose the correct answer<br></p>",
+    "answers": [
+      {
+        "answer": "Use the Get-Hotfix command to connect remotely to each machine and search for the hotfix. y Export the results to a CSV file.",
+        "correct": false
+      },
+      {
+        "answer": "Use the Get-Childltem command to connect remotely to each machine and search for the _y hotfix. Export the results to a CSV file.",
+        "correct": false
+      },
+      {
+        "answer": "Use WMI to connect remotely to each machine and search for the hotfix. Export the results to a CSV file.",
+        "correct": false
+      },
+      {
+        "answer": "Use Update Management from the automation account. Select the hotfix from the missing updates list. Export the results to a CSV file.",
+        "correct": true
+      }
+    ],
+    "explanation": "<p> You should use Update Management from the automation account, select the hotfix from the missing updates list, and export the results to a CSV file. When Azure Update Management is enabled in Azure, you can either use an existing automation account or a new one is created for you. Virtual machines (VMs) that have Update Management enabled are then scanned regularly for compliance, and the scan results are exported to a Log Analytics workspace. You should search for any VMs that require a hotfix to be installed. By selecting the hotfix from the missing updates list, the Kusto Query Language (KQL) script is automatically generated and displays a list of VMs requiring the update. The results can then be exported to a CSV file. </p><p> You should not use the Get-Hotfix command. The command searches for installed hotfixes on local and remote machines and generates a list of VMs requiring the update. However, the search is resource-intensive and requires all VMs to be powered on. </p><p> You should not use WMI or the Get-Childltem command to connect remotely to each machine, search for the hotfix, and export the results to a CSV file. Both commands require all VMs to be powered on, are resource-intensive, and can be inaccurate. </p>"
+  },
+  {
+    "question": "<p> Your company has a set of Azure virtual machines defined as part of their Azure subscription. They want to collect events emitted from the Azure virtual machines onto a Log Analytics workspace. They want to then create alerts based on certain criteria on the events emitted. Which of the following services can be considered for this requirement? </p>",
+    "answers": [
+      { "answer": "Azure Monitor", "correct": true },
+      { "answer": "Application Insights", "correct": false },
+      { "answer": "Microsoft Defender for Cloud", "correct": false },
+      { "answer": "Azure AD Privileged Identity Management", "correct": false }
+    ],
+    "explanation": "<p> You can define Log Analytics workspaces in Azure Monitor. The data from the machines can be sent to the workspaces. You can then define alerts in Azure Monitor. </p><p> Note:- Even Microsoft Sentinel can be used for this purpose. Events can be sent to the Sentinel workspace. And then you can create alerts in Microsoft Sentinel as well. </p>"
+  },
+  {
+    "question": "<p> You work for a pharmaceutical company that regularly runs clinical trials on new drugs in development. Each new trial is worked on by several different teams who use a dedicated Azure Enterprise application to enter result data. </p><p> When a trial starts, a new Enterprise application is created and access is granted to the application via Azure Active Directory (Azure AD) groups. </p><p> Your company decides to implement access reviews to streamline the process and shorten the time needed to set up new clinical trials. All users are already assigned an Office 365 E3 license. </p><p> You need to enable and configure an access review for a new Azure Enterprise application. You should also ensure that costs are kept to a minimum. </p><p>What should you do?</p><p>Choose the correct answer</p><p><br></p>",
+    "answers": [
+      {
+        "answer": "Create a Conditional Access policy and assign the policy to the new Enterprise Application. Link the Conditional Access policy to a new access review.",
+        "correct": false
+      },
+      {
+        "answer": "Assign all users an Office 365 E5 license. Then select the Azure AD blade, select Identity Governance, and configure an access review policy.",
+        "correct": false
+      },
+      {
+        "answer": "In the Azure portal, select the Azure AD blade, select Identity Governance, and configure an _y access review policy.",
+        "correct": false
+      },
+      {
+        "answer": "Assign all users an Azure AD Premium P2 license. Then select the Azure AD blade, select Identity Governance, and configure an access review policy.",
+        "correct": true
+      }
+    ],
+    "explanation": "<p> You should first assign all users an Azure AD Premium P2 license. You should then select the Azure AD blade, select Identity Governance, and configure an access review policy. An Azure AD Premium P2 license is required for access reviews. </p><p> You should not assign all users an Office 365 E5 license, then select the Azure AD blade, select Identity Governance, and configure an access review policy. The license would include additional enterprise features that cost more and are not required to implement the solution. This scenario requests to keep the costs to a minimum. All you would need is an Azure AD Premium P2 license for access reviews. </p><p> You should not create a Conditional Access policy, assign the policy to the new Enterprise Application, and link the Conditional Access policy to a new access review. Conditional Access is a technology that is used to make decisions and enforce corporate organizational policies when accessing corporate resources. </p>"
+  },
+  {
+    "question": "<p> Your company has an Azure AD Tenant that contains the following users </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_02-38-41-64b5176e35158d51b3b662bea44ace37.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_02-38-41-64b5176e35158d51b3b662bea44ace37.JPG\" alt=\"\" loading=\"eager\"></div></span><p>The following password protection settings are in place</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_02-38-41-e30f00871843f5e88a0562d319195b6e.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_02-38-41-e30f00871843f5e88a0562d319195b6e.JPG\" alt=\"\" loading=\"eager\"></div></span><p>Could UserB change their password to DCloud!1?</p>",
+    "answers": [
+      { "answer": "Yes", "correct": true },
+      { "answer": "No", "correct": false }
+    ],
+    "explanation": "<p> Yes, because the mode is set to Audit. So, the password policy would only be audited and not enforced. </p>"
+  },
+  {
+    "question": "<p> Your company’s development team is developing a .NET Core application. The application needs to access an Azure storage account. It needs to be able to read and write blobs onto the Azure storage account. </p><p> Which of the following would you configure for the Azure Storage Account? </p><p><br></p>",
+    "answers": [
+      {
+        "answer": "Upgrade Azure Blob Storage with Azure Data Lake Storage Gen2 capabilities",
+        "correct": false
+      },
+      { "answer": "Firewall and virtual networks", "correct": false },
+      { "answer": "Access Control (IAM)", "correct": true },
+      { "answer": "Shared Access Signature (SAS)", "correct": false }
+    ],
+    "explanation": "<p> Once you have the application object in place, you can then assign role-based access control to the application onto the Azure storage account. </p>"
+  },
+  {
+    "question": "<p>Your company has the following Azure virtual machines</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-03-09-d668c29e42d921f476b9cdc705334ec1.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-03-09-d668c29e42d921f476b9cdc705334ec1.JPG\" alt=\"\" loading=\"eager\"></div></span><p>The following resource locks are created</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-03-09-21ccc2dec34ed74fa0e2ba2b7923fbf1.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-03-09-21ccc2dec34ed74fa0e2ba2b7923fbf1.JPG\" alt=\"\" loading=\"eager\"></div></span><p><br></p><p>Can you stop the Azure virtual machine appvm?</p>",
+    "answers": [
+      { "answer": "No", "correct": true },
+      { "answer": "Yes", "correct": false }
+    ],
+    "explanation": "<p><br></p><p> Here there is a read-only lock on the Azure virtual machine, hence we can’t modify the properties of the virtual machine. </p>"
+  },
+  {
+    "question": "<p>You have an Azure AD tenant in place.</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_02-42-45-567f2ee1c2da4939f757b72f6795431f.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_02-42-45-567f2ee1c2da4939f757b72f6795431f.JPG\" alt=\"\" loading=\"eager\"></div></span><p> You want to configure a logging solution for the Azure AD Audit logs. You need the logs to be retained for a year. And you need to be able to query the logs using the Kusto query language. Which of the following would you choose as the log destination? </p><p><br></p>",
+    "answers": [
+      { "answer": "An Azure Storage Account", "correct": false },
+      { "answer": "A Azure Log Analytics workspace", "correct": true },
+      { "answer": "An Azure Event Hub", "correct": false }
+    ],
+    "explanation": "<p> Here you can stream the log data to a Log Analytics workspace. You can use the Kusto Query language to query for the log data. </p>"
+  },
+  {
+    "question": "<p> Your company has defined a set of virtual machines as part of their subscription. The company currently has Azure P2 Premium licenses for their users. They are using the Standard version of Azure Security Center. They want to enable Just in time access for the virtual machines. They want to ensure that the solution minimizes costs. </p><p> Which of the following Role-Based Access actions need to be allowed for a user that would request Just-in-time access to a virtual machine? </p><p>Choose two answers from the options given below</p>",
+    "answers": [
+      {
+        "answer": "Microsoft.Security/locations/jitNetworkAccessPolicies/initiate/action",
+        "correct": true
+      },
+      {
+        "answer": "Microsoft.Security/locations/jitNetworkAccessPolicies/write",
+        "correct": false
+      },
+      { "answer": "Microsoft.Compute/virtualMachines/read", "correct": true },
+      { "answer": "Microsoft.Compute/virtualMachines/write", "correct": false }
+    ],
+    "explanation": "<p> The Access policy assigned to the user needs to have the actions of “Microsoft.Security/locations/jitNetworkAccessPolicies/initiate/action” and “Microsoft.Compute/virtualMachines/read”. </p><p><br></p><p> Since this is given in the Microsoft documentation, all other options are incorrect. For more information on just-in-time virtual machine access, one can visit the below URL </p><p> https://docs.microsoft.com/en-us/azure/security-center/just-in-time-explained#what-permissions-are?needed-to-configure-and-use-jit </p>"
+  },
+  {
+    "question": "<p> You have an Azure subscription named Sub1 that is associated to an Azure Active Directory (Azure AD) tenant named sorai.com. An administrator named Akira.nakamure has access to the following identities: An OpenID-enabled user account A Hotmail account An account in sorai.com An account in an Azure AD tenant named Watashi.com You plan to use Azure Account Center to transfer the ownership of Sub1 to Akira.nakamure. To which accounts can you transfer the ownership of Sub1? </p><p><br></p><p><br></p>",
+    "answers": [
+      {
+        "answer": "sorai.com, watashi.com, and Hotmail only",
+        "correct": false
+      },
+      {
+        "answer": "soraI.com, Watashi.com, Hotmail, and OpenID-enabled user account",
+        "correct": false
+      },
+      { "answer": "sorai.com and watashi.com only", "correct": true },
+      { "answer": "sorai.com only", "correct": false }
+    ],
+    "explanation": "<p> When you transfer billing ownership of your subscription to an account in another Azure AD tenant, you can move the subscription to the new account's tenant. If you do so, all users, groups, or service principals who had role based access (RBAC) to manage subscriptions and its resources lose their access. Only the user in the new account who accepts your transfer request will have access to manage the resources. </p><p> Reference: https://docs.microsoft.com/en-us/azure/billing/billing-subscription-transfer </p><p> https://docs.microsoft.com/en-us/azure/billing/billing-subscription-transfer#transferring-subscription-to-an-account-in-another-azure-ad-tenant </p>"
+  },
+  {
+    "question": "<p>Your company has the following Azure virtual machines</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-59-17-9b2fd7109b7fafddd7ed0ae7600bba39.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-59-17-9b2fd7109b7fafddd7ed0ae7600bba39.JPG\" alt=\"\" loading=\"eager\"></div></span><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-59-17-01065df63141164889174c34b30e5702.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-59-17-01065df63141164889174c34b30e5702.JPG\" alt=\"\" loading=\"eager\"></div></span><p><br></p><p><br></p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-59-17-6192c45cad96761cce869ae8d725b4de.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-59-17-6192c45cad96761cce869ae8d725b4de.JPG\" alt=\"\" loading=\"eager\"></div></span><p>The company also has the following storage account</p><p><img src=\"downloaded_images/Azure_AZ500_03/2022-01-31_08-58-56-d83d51b47fb265b328da8bd8300a81e4.jpg\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-01-31_08-58-56-d83d51b47fb265b328da8bd8300a81e4.jpg\" alt=\"\" loading=\"eager\"></div><p></p><p><br></p><p> The following network settings are in place for the storage account </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-59-17-b3bb63afeb34d38d790b9c64d1f30f1c.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-59-17-b3bb63afeb34d38d790b9c64d1f30f1c.JPG\" alt=\"\" loading=\"eager\"></div></span><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-59-18-a86fb2aff8ae5913a679543c1c19226e.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-59-18-a86fb2aff8ae5913a679543c1c19226e.JPG\" alt=\"\" loading=\"eager\"></div></span><p>Can appvm2 connect to vmstore40090?</p>",
+    "answers": [
+      { "answer": "Yes", "correct": false },
+      { "answer": "No", "correct": true }
+    ],
+    "explanation": "<p> Here neither does the virtual network containing appvm2 have a service endpoint connection to the storage account. Nor is the IP address range allowed in the address range. </p>"
+  },
+  {
+    "question": "<p>You currently have the following Azure subscriptions in place</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_09-10-21-8a97290829dd90dd0db93bc7d15cdf23.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_09-10-21-8a97290829dd90dd0db93bc7d15cdf23.JPG\" alt=\"\" loading=\"eager\"></div></span><p> Under Azure subscription 1, there is a resource group named app-grp. Under the resource group there is an Azure virtual machine named appvm. </p><p>The following Blueprints are published</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_09-10-21-c1d9ebae1e24c6acad3dc5beb46e21d8.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_09-10-21-c1d9ebae1e24c6acad3dc5beb46e21d8.JPG\" alt=\"\" loading=\"eager\"></div></span><p>To which of the following can you assign newprint to?</p>",
+    "answers": [
+      {
+        "answer": "The Information Technology Management Group, Azure subscription 1 and app-grp",
+        "correct": false
+      },
+      {
+        "answer": "Azure subscription 1 and Staging Subscription",
+        "correct": true
+      },
+      { "answer": "Azure subscription 1 only", "correct": false },
+      {
+        "answer": "The Information Technology Management Group only",
+        "correct": false
+      },
+      { "answer": "app-grp only", "correct": false },
+      { "answer": "The Tenant Root Group only", "correct": false }
+    ],
+    "explanation": "<p> Since the Blueprint is defined at the Information Technology Management Group, it can be assigned to the subscriptions under the Management Group. </p>"
+  },
+  {
+    "question": "<img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-00-c5161fb4fea0a4ff16a23a484b7198b4.png\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-00-c5161fb4fea0a4ff16a23a484b7198b4.png\" alt=\"\" loading=\"eager\"></div></span><p><strong>Case Study</strong></p><p><strong>General Overview</strong></p><p> Watashi, Inc. is a consulting company that has a main office in Massachusetts and branch offices in Seattle and New York. </p><p>Watash has IT, Data science, and finance departments.</p><p><strong>Existing Environment</strong></p><p><strong>Network Environment</strong></p><p> Fabrikam has a Microsoft 365 subscription and an Azure subscription named subscription1. </p><p> The network contains an on-premises Active Directory domain named Fabrikam.com. The domain contains two </p><p> organizational units (OUs) named OU1 and OU2. Azure AD Connect cloud sync syncs only OU1. </p><p>The Azure resources hierarchy is shown in the following exhibit.</p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-00-ae0a8d0bf68401c6fd86db90448bf5f0.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-00-ae0a8d0bf68401c6fd86db90448bf5f0.JPG\" alt=\"\" loading=\"eager\"></div></span><p> The Azure Active Directory (Azure AD) tenant contains the users shown in the following table. </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-00-9647d80dc1ae2ae9075333dbd7a90122.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-00-9647d80dc1ae2ae9075333dbd7a90122.JPG\" alt=\"\" loading=\"eager\"></div></span><p>Azure AD contains the resources shown in the following table.</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-00-bd53338952a0545d578c0540cca37b51.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-00-bd53338952a0545d578c0540cca37b51.JPG\" alt=\"\" loading=\"eager\"></div></span><p><strong>Subscription1 Resources</strong></p><p> Subscription1 contains the virtual networks shown in the following table. </p><p><br></p><p> Subscription1 contains the network security groups (NSGs) shown in the following table. </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-01-704c5c0c5a1a33623bdd58160052e6d6.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-01-704c5c0c5a1a33623bdd58160052e6d6.JPG\" alt=\"\" loading=\"eager\"></div></span><p> Subscription1 contains the virtual machines shown in the following table. </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-01-a33ff5c0236723fb5e02fae42ff4cd0e.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-01-a33ff5c0236723fb5e02fae42ff4cd0e.JPG\" alt=\"\" loading=\"eager\"></div></span><p> Subscription1 contains the Azure key vaults shown in the following table. </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-01-fab33a52a93ca22429f41d1ce2eef112.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-01-fab33a52a93ca22429f41d1ce2eef112.JPG\" alt=\"\" loading=\"eager\"></div></span><p> Subscription1 contains a storage account named storage1 in the West US Azure region. </p><p><strong>Planned Changes and Requirements</strong></p><p><strong>Planned Changes</strong></p><p>Fabrikam plans to implement the following changes:</p><p> • Create two application security groups as shown in the following table. </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-01-bab73a1e25152110dddd76cb1aa24c1e.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-28-01-bab73a1e25152110dddd76cb1aa24c1e.JPG\" alt=\"\" loading=\"eager\"></div></span><p>• Associate the network interface of VM1 to ASG1.</p><p>• Deploy SecPol1 by using Azure Security Center.</p><p> • Deploy a third-party app named App1. A version of App1 exists for all available operating systems. </p><p>• Create a resource group named RG2.</p><p>• Sync OU2 to Azure AD.</p><p>• Add User1 to Group1.</p><p><strong>Technical Requirements</strong></p><p>Fabrikam identifies the following technical requirements:</p><p> • The finance department users must reauthenticate after three hours when they access SharePoint Online. </p><p> • Storage1 must be encrypted by using customer-managed keys and automatic key rotation. </p><p> • From Sentinel1, you must ensure that the following notebooks can be launched: </p><p>- Entity Explorer – Account</p><p>- Entity Explorer – Windows Host</p><p>- Guided Investigation Process Alerts</p><p> • VM1, VM2, and VM3 must be encrypted by using Azure Disk Encryption. </p><p> • Just in time (JIT) VM access for VM1, VM2, and VM3 must be enabled. </p><p>• App1 must use a secure connection string stored in KeyVault1.</p><p>• KeyVault1 traffic must NOT travel over the internet.</p><p><strong>QUESTION:</strong></p><p> You need to meet the technical requirements for the finance department users. </p><p>Which CAPolicy1 settings should you modify?</p><p><br></p>",
+    "answers": [
+      { "answer": "Cloud apps or actions", "correct": false },
+      { "answer": "Conditions", "correct": false },
+      { "answer": "Grant", "correct": false },
+      { "answer": "Session", "correct": true }
+    ],
+    "explanation": "<p> - Go to Access Controls &gt; Session and click Sign-in frequency </p><p> - Enter the required value of days and hours in the first text box </p><p>- Select a value of Hours or Days from dropdown</p><p>- Save your policy</p><p><br></p><p>Reference:</p><p> https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/howto-conditional-access-session-lifetime </p>"
+  },
+  {
+    "question": "<p> Your company has an Azure AD tenant and an Azure subscription in place. They have the following custom roles defined </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-37-55-3cc6ae9cc490df2813a2d9640a748d92.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-37-55-3cc6ae9cc490df2813a2d9640a748d92.JPG\" alt=\"\" loading=\"eager\"></div></span><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-37-55-e7840530b8161b0a45a9d4a97c286ca7.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-37-55-e7840530b8161b0a45a9d4a97c286ca7.JPG\" alt=\"\" loading=\"eager\"></div></span><p>You have to create the following roles</p><p>1) UserAdminRole – This will be in Azure AD</p><p> 2) UserReaderCustom – This will be at the Azure Subscription level </p><p>Can you create the UserAdminRole based on a built-in role?</p><p><br></p>",
+    "answers": [
+      { "answer": "Yes", "correct": false },
+      { "answer": "No", "correct": true }
+    ],
+    "explanation": "<p> You cannot create Azure AD custom roles based on existing roles. </p>"
+  },
+  {
+    "question": "<p> Your company has configured a hybrid identity with an on-premises Active Directory (AD) domain and an Azure AD tenant. Azure AD Connect is deployed. User accounts are synchronized between the on-premises domain and the Azure AD domain. </p><p> On-premises applications are deployed to enable the access from outside your company network. </p><p> You need to configure prerequisites to provide multi-factor authentication (MFA) access to these applications. </p><p>What should you deploy or implement?</p><p>Choose the correct answer</p><p><br></p>",
+    "answers": [
+      { "answer": "Office 365 service", "correct": false },
+      { "answer": "Network Policy Server (NPS)", "correct": false },
+      { "answer": "Azure AD Identity Protection", "correct": false },
+      { "answer": "Azure AD Application Proxy", "correct": true }
+    ],
+    "explanation": "<p><br></p><p> You should deploy and implement Azure AD Application Proxy. This is required to support MFA authentication for on-premises applications that have been deployed for cloud access. Application Proxy provides remote access to on-premises applications. </p><p> You should not implement an NPS. This is a prerequisite when configuring support for using Azure MFA with RADIUS authentication. This is not an issue in this scenario. </p><p> You should not deploy an Office 365 service. Office 365 is not a requirement for on-premises application access from the Internet. </p><p> You should not implement Azure AD Identity Protection. However, there may be other reasons to set up Identity Protection. </p>"
+  },
+  {
+    "question": "<p>Your company has an Azure container registry named app-registry.</p><p>What role be able to pull images from the container registry?</p><p>Think of least privilege access</p>",
+    "answers": [
+      { "answer": "AcrImageSigner", "correct": false },
+      { "answer": "AcrPush", "correct": false },
+      { "answer": "AcrPullmage", "correct": false },
+      { "answer": "Owner", "correct": false },
+      { "answer": "Reader", "correct": false },
+      { "answer": "AcrPull", "correct": true }
+    ],
+    "explanation": "<p> For more information on container registry roles, one can visit the below URL </p><p><a href=\"https://docs.microsoft.com/en-us/azure/container-registry/container-registry-roles\">https://docs.microsoft.com/en-us/azure/container-registry/container-registry-roles</a></p>"
+  },
+  {
+    "question": "<p> Your company has the following Infrastructure in place. There are 3 Azure virtual networks. appvm1 and appvm2 are part of app-network1. appvm3 is part of app-network2. And appvm4 is part of app-network3. There are virtual network peering connections across all networks. </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_00-26-45-90308be5be7c8864d63bf45bdb89486e.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_00-26-45-90308be5be7c8864d63bf45bdb89486e.JPG\" alt=\"\" loading=\"eager\"></div></span><p>An Azure bastion host is deployed to app-network3.</p><p>Can you use the Azure bastion host to connect to appvm1?<br></p>",
+    "answers": [
+      { "answer": "Yes", "correct": true },
+      { "answer": "No", "correct": false }
+    ],
+    "explanation": "<p> Yes, you can use the Azure Bastion host to connect to virtual machines in peered virtual networks. </p>"
+  },
+  {
+    "question": "<p>Your company has an Azure AD tenant and an Azure subscription.</p><p> They have the following virtual machines defined as part of the subscription </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-13-37-ab6aaf5e385848abc9add6a0db04396d.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-13-37-ab6aaf5e385848abc9add6a0db04396d.JPG\" alt=\"\" loading=\"eager\"></div></span><p> Auto provisioning is then turned on when it comes to Log Analytics agent for Azure VMs in Microsoft Defender for Cloud. </p><p> You then deploy the following Azure virtual machine as part of the subscription </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-13-37-b98838c8cfbb951f64fe020c15c7da58.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-13-37-b98838c8cfbb951f64fe020c15c7da58.JPG\" alt=\"\" loading=\"eager\"></div></span><p>Would the Log Analytics agent be installed on appvm2?</p>",
+    "answers": [
+      { "answer": "Yes", "correct": true },
+      { "answer": "No", "correct": false }
+    ],
+    "explanation": "<p> Yes, if Auto provisioning is turned on , the Log Analytics agent would get installed on existing machines and new machines. </p><p> For more information on the Auto-Provisioning feature , one can visit the below URL </p><p> https://docs.microsoft.com/en-us/azure/defender-for-cloud/enable-data-collection?tabs=autoprovision-feature </p>"
+  },
+  {
+    "question": "<p> A company is planning to use Improved regulatory compliance what is the first thing we should check? </p>",
+    "answers": [
+      {
+        "answer": "At a minimum, you'll need to have Resource Policy Contributor and Security Admin roles assigned.",
+        "correct": false
+      },
+      {
+        "answer": "you must be assigned the role Security Admin and enable enhanced security features on a subscription",
+        "correct": true
+      },
+      {
+        "answer": "The first step in defining a standard pattern for compliance is to compose a blueprint from the available resources",
+        "correct": false
+      },
+      {
+        "answer": "You must be signed in with an account that has reader access to the policy compliance data.",
+        "correct": false
+      }
+    ],
+    "explanation": "<p> https://docs.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages </p><p> https://docs.microsoft.com/es-es/azure/defender-for-cloud/get-started </p><p><br></p>"
+  },
+  {
+    "question": "<p> Your company makes use of Azure Active Directory (Azure AD) in a hybrid configuration. All users are making use of hybrid Azure AD joined Windows 10 computers. </p><p> You manage an Azure SQL database that allows for Azure AD authentication. </p><p> You need to make sure that database developers are able to connect to the SQL database via Microsoft SQL Server Management Studio (SSMS). You also need to make sure the developers use their on-premises Active Directory account for authentication. Your strategy should allow for authentication prompts to be kept to a minimum. </p><p> Which of the following is the authentication method the developers should use? </p>",
+    "answers": [
+      { "answer": "Azure Multi-Factor authentication.", "correct": false },
+      { "answer": "Azure AD token.", "correct": false },
+      {
+        "answer": "Active Directory integrated authentication.",
+        "correct": true
+      }
+    ],
+    "explanation": "<p> Azure AD can be the initial Azure AD managed domain. Azure AD can also be an on-premises Active Directory Domain Services that is federated with the Azure </p><p>AD.</p><p>Using an Azure AD identity to connect using SSMS or SSDT</p><p> The following procedures show you how to connect to a SQL database with an Azure AD identity using SQL Server Management Studio or SQL Server Database </p><p>Tools.</p><p>Active Directory integrated authentication</p><p> Use this method if you are logged in to Windows using your Azure Active Directory credentials from a federated domain. </p><p> 1. Start Management Studio or Data Tools and in the Connect to Server (or Connect to Database Engine) dialog box, in the Authentication box, select Active </p><p> Directory - Integrated. No password is needed or can be entered because your existing credentials will be presented for the connection. </p><p> 2. Select the Options button, and on the Connection Properties page, in the Connect to database box, type the name of the user database you want to connect to. </p><p> (The AD domain name or tenant ID option is only supported for Universal with MFA connection options, otherwise it is greyed out.) </p>"
+  },
+  {
+    "question": "<p> Your company has an Azure container registry named app-registry. The following users are defined in the Azure AD tenant along with their roles. All roles have been applied at the level of app-registry. </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_19-30-26-acc0e57b04b5e4894f4299e16c44bc5d.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_19-30-26-acc0e57b04b5e4894f4299e16c44bc5d.JPG\" alt=\"\" loading=\"eager\"></div></span><p>Would UserA be able to push images from the container registry?</p>",
+    "answers": [
+      { "answer": "No", "correct": true },
+      { "answer": "Yes", "correct": false }
+    ],
+    "explanation": "<p> The Reader permission gives access to Pull image and not push images </p><p> Below is the screenshot from the Microsoft documentation on the different permissions </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_19-30-27-e0bde62022204665c32089a07c682197.png\"><p> For more information on container registry roles, one can visit the below URL </p><p> https://docs.microsoft.com/en-us/azure/container-registry/container-registry-roles </p>"
+  },
+  {
+    "question": "<p> Your company needs to deploy an application that is based on containers. The containers need to be deployed to Azure Container Instances. The application consists of two containers. One container hosts a web application. And the other hosts a database server. The web application talks to the database server. You have to ensure that the containers are deployed together. You also need to ensure that the database container ports are not exposed to the Internet. Which of the following would you include in the deployment of this solution? </p><p><br></p>",
+    "answers": [
+      { "answer": "Network Security Groups", "correct": false },
+      { "answer": "Application Security Groups", "correct": false },
+      { "answer": "Container Groups", "correct": true },
+      { "answer": "Virtual Network Peering", "correct": false }
+    ],
+    "explanation": "<p> Here you can deploy the containers as part of a container group. For more information on container groups, one can visit the below URL - https://docs.microsoft.com/en-us/azure/container-instances/container-instances-container-groups </p>"
+  },
+  {
+    "question": "<p> Your team has an Azure Container Registry. Content trust has been enabled for the Azure Container Registry. You have to give a user defined in the Azure AD tenant to push signed images onto the Azure Container Registry resource. Which of the following permissions can be given for this requirement? You have to ensure that the least privileges are given for this requirement. Choose 2 answers from the options given below </p>",
+    "answers": [
+      { "answer": "AcrImageSigner", "correct": false },
+      { "answer": "AcrPush", "correct": true },
+      { "answer": "Contributor", "correct": false },
+      { "answer": "AcrQuarantineReader", "correct": false }
+    ],
+    "explanation": "<p> In order to push trusted images, the user needs to be given the AcrPush and AcrImageSigner role. </p><p> For more information on content trust when it comes to the Azure Container Registry , one can visit the below URL </p><p> https://docs.microsoft.com/en-us/azure/container-registry/container-registry-content-trust </p>"
+  },
+  {
+    "question": "<p> Which of the following service can be used to check if a workload on Azure is compliant with ISO 27001 standards? </p>",
+    "answers": [
+      { "answer": "Azure AD Privileged Identity Management", "correct": false },
+      { "answer": "Azure AD Identity Protection", "correct": false },
+      { "answer": "Microsoft Sentinel", "correct": false },
+      { "answer": "Microsoft Defender for Cloud", "correct": true }
+    ],
+    "explanation": "<p>You can achieve this with the Microsoft Defender for Cloud</p><p> This is available under the Regulatory compliance section in Microsoft Defender for Cloud </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_07-57-35-ea426819b7c94e5c465930918fdf2790.JPG\">"
+  },
+  {
+    "question": "<p> You are troubleshooting a security issue for an Azure Storage account. </p><p>You enable the diagnostic logs for the storage account.</p><p>What should you use to retrieve the diagnostics logs?</p>",
+    "answers": [
+      { "answer": "Azure Security Center", "correct": false },
+      { "answer": "File Explorer in Windows", "correct": false },
+      { "answer": "Azure Storage Explorer", "correct": true },
+      { "answer": "SQL query editor in Azure", "correct": false }
+    ],
+    "explanation": "<img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_20-42-43-800e49466a962051ae94f7ead4fc00e8.JPG\"><p> There are several versions of this question in the exam. The questions in the exam have two different correct answers:<br>1. Azure Storage Explorer<br>2. AZCopy<br>Other incorrect answer options you may see on the exam include the following:<br>1. Azure Monitor<br>2. The Security &amp; Compliance admin center<br>3. Azure Cosmos DB explorer<br>4. Azure Monitor<br>Reference:<br>https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics-metrics?toc=%2fazure%2fstorage%2fblobs%2ftoc.json https://docs.microsoft.com/en-us/azure/storage/common/storage-explorers </p>"
+  },
+  {
+    "question": "<p> You have Azure Resource Manager templates that you use to deploy Azure virtual machines. You need to disable unused Windows features automatically as instances of the virtual machines are provisioned. What should you use? </p>",
+    "answers": [
+      {
+        "answer": "security policies in Azure Security Center",
+        "correct": false
+      },
+      { "answer": "Azure Automation State Configuration", "correct": true },
+      {
+        "answer": "device compliance policies in Microsoft Intune",
+        "correct": false
+      },
+      {
+        "answer": "device configuration policies in Microsoft Intune",
+        "correct": false
+      }
+    ],
+    "explanation": "<p> You can use Azure Automation State Configuration to manage Azure VMs (both Classic and Resource Manager), on-premises VMs, Linux machines, AWS VMs, and on-premises physical machines. Note: Azure Automation State Configuration provides a DSC pull server similar to the Windows Feature DSC-Service so that target nodes automatically receive configurations, conform to the desired state, and report back on their compliance. The built-in pull server in Azure Automation eliminates the need to set up and maintain your own pull server. Azure Automation can target virtual or physical Windows or Linux machines, in the cloud or on-premises. Reference: https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started </p>"
+  },
+  {
+    "question": "<p> Your team needs to develop an application that will work with the Microsoft Graph service. The application needs to be able to read and modify the properties of users defined in an Azure AD tenant. Which of the following needs to be configured for this requirement? </p>",
+    "answers": [
+      { "answer": "Azure AD Administrative Units", "correct": false },
+      { "answer": "Azure AD Application registration", "correct": true },
+      { "answer": "Azure AD Application Proxy", "correct": false },
+      { "answer": "Azure AD Conditional Access", "correct": false }
+    ],
+    "explanation": "<p> You need to register an application in Azure AD. This application object can be given the required permissions to the Microsoft Graph service. </p>"
+  },
+  {
+    "question": "<p>Your company has a Microsoft Sentinel workspace</p><p><img src=\"downloaded_images/Azure_AZ500_03/2022-01-31_09-36-52-8e6b2b36ced8f90f7c04d57bd757443a.jpg\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-01-31_09-36-52-8e6b2b36ced8f90f7c04d57bd757443a.jpg\" alt=\"\" loading=\"eager\"></div><p></p><p><img src=\"downloaded_images/Azure_AZ500_03/2022-01-31_09-36-52-16fc7983b943a7b14244be3bfb343795.jpg\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-01-31_09-36-52-16fc7983b943a7b14244be3bfb343795.jpg\" alt=\"\" loading=\"eager\"></div><p></p><p> They want to create rules that would detect any sort of suspicious threats. They also want to automate any sort of responses to the detected threats. </p><p> Which of the following could be used for the detection of suspicious threats? </p><p><br></p>",
+    "answers": [
+      { "answer": "KQL", "correct": true },
+      { "answer": "Ingest data into Azure Data Explorer", "correct": false },
+      { "answer": "An alert", "correct": false },
+      { "answer": "A playbook", "correct": false },
+      { "answer": "A PowerShell query", "correct": false }
+    ],
+    "explanation": "<p> You can create a Kusto query language query that will search for any sort of threats in the data collected. </p>"
+  },
+  {
+    "question": "<p>Your company has an Azure AD tenant and an Azure subscription.</p><p> The Azure AD tenant contains users. A couple of them are mentioned below </p><p>1) appusrA</p><p>2) appusrB</p><p> The following role settings are in place for the Groups Administrator role </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-11-23-c516d12648165152e0b2d716c2e2594a.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-11-23-c516d12648165152e0b2d716c2e2594a.JPG\" alt=\"\" loading=\"eager\"></div></span><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-11-23-5af39a5f22baae8181c64b2bea38eaba.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-11-23-5af39a5f22baae8181c64b2bea38eaba.JPG\" alt=\"\" loading=\"eager\"></div></span><p>The following assignments are made on the 1st of July 2022</p><p>1) For appusrA</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-11-23-0f998aaeaf662bf6df77ce691202eb6e.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-11-23-0f998aaeaf662bf6df77ce691202eb6e.JPG\" alt=\"\" loading=\"eager\"></div></span><p>2) For appusrB</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-11-23-e664ed3dbb58408ad797640367f57905.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_10-11-23-e664ed3dbb58408ad797640367f57905.JPG\" alt=\"\" loading=\"eager\"></div></span><p> Can appusrB activate the Groups Administrator role on the 2th of August 2022? </p>",
+    "answers": [
+      { "answer": "No", "correct": true },
+      { "answer": "Yes", "correct": false }
+    ],
+    "explanation": "<p><br></p><p> Since the maximum time period for Eligible assignments is one month, the user will not be eligible to take up the role. </p>"
+  },
+  {
+    "question": "<p> Your development team is deploying an application to the Azure Web App service. They want to protect the web application against Internet-based attacks such as cross-site scripting attacks. Which of the following can be done to achieve this requirement? </p><p><br></p>",
+    "answers": [
+      {
+        "answer": "Deploy an Azure Firewall in front of the web app",
+        "correct": false
+      },
+      {
+        "answer": "Deploy an Azure Front Door in front of the web app",
+        "correct": true
+      },
+      {
+        "answer": "Deploy an Azure Bastion Host in front of the web app",
+        "correct": false
+      }
+    ],
+    "explanation": "<p> One solution is to deploy the Azure Front Door service in front of the web application. You can then use the Web Application Firewall available in Azure Front Door to protect the web application. For more information on Azure Front Door – Web Application Firewall , one can visit the below URL - https://docs.microsoft.com/en-us/azure/web-application-firewall/afds/afds-overview </p>"
+  },
+  {
+    "question": "<p> You have a set of Azure Windows virtual machines defined as part of your subscription. You are planning to implement Azure Bastion for remote desktop connectivity. You have to configure the Network security groups accordingly. </p><p> Which of the following port needs to be opened on the Azure Bastion Subnet for Ingress Traffic from the public Internet? </p><p><br></p>",
+    "answers": [
+      { "answer": "22", "correct": false },
+      { "answer": "8080", "correct": false },
+      { "answer": "443", "correct": true },
+      { "answer": "3389", "correct": false }
+    ],
+    "explanation": "<p> You need to allow traffic on port 443. This is also given in the Microsoft documentation. </p><p> Since this is clearly mentioned in the Microsoft documentation, all other options are incorrect. </p><p> For more information on the network security groups for Azure Bastion, please refer to the below link: </p><p>https://docs.microsoft.com/en-us/azure/bastion/bastion-nsg</p>"
+  },
+  {
+    "question": "<p> Your company has configured an Azure Policy when it comes to governance for their Azure virtual machines. They want to deploy this policy via the use of Microsoft Defender for Cloud. Which of the following must they create for this requirement? </p>",
+    "answers": [
+      { "answer": "An initiative", "correct": true },
+      { "answer": "A Management Group", "correct": false },
+      { "answer": "A Conditional Access Policy", "correct": false },
+      { "answer": "A Custom RBAC role", "correct": false }
+    ],
+    "explanation": "<p> Here you can create an initiative that contains the policy and then apply it within Microsoft Defender for Cloud. </p>"
+  },
+  {
+    "question": "<p> Your company has a sentinel workspace. They have enabled data collection using the Windows Security Events via AMA data connector. This connector is collecting events from a set of Azure virtual machines. </p><p> You need to write a query to see if an event was generated more than 50 times in the previous 1 day. You have to complete the following query for this requirement </p><p><img src=\"downloaded_images/Azure_AZ500_03/2022-02-08_15-02-42-45408017002292284844b56fc8f58ace.jpg\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-02-08_15-02-42-45408017002292284844b56fc8f58ace.jpg\" alt=\"\" loading=\"eager\"></div><br><p></p>",
+    "answers": [
+      { "answer": "EventID", "correct": false },
+      { "answer": "UnitID", "correct": false },
+      { "answer": "Makeset()", "correct": false },
+      { "answer": "Count()", "correct": true }
+    ],
+    "explanation": "<p>Here we need to summarize the count of events.</p>"
+  },
+  {
+    "question": "<p> Your company has an Azure virtual machine. They want to enable Just-In-Time VM access to grant PowerShell access to the virtual machines. </p><p> You have to ensure the right role is created and assigned to users who need to request Just-In-Time VM access to the machine. </p><p> Which of the following port needs to be configured in the JIT policy? </p><p><br></p>",
+    "answers": [
+      { "answer": "5986", "correct": true },
+      { "answer": "22", "correct": false },
+      { "answer": "3389", "correct": false },
+      { "answer": "80", "correct": false }
+    ],
+    "explanation": "<p>For PowerShell access , the port number should be 5986.</p><p> For more information on Just-In-Time VM Access, one can visit the below URL </p><p> https://docs.microsoft.com/en-us/azure/security-center/just-in-time-explained </p>"
+  },
+  {
+    "question": "<p>Your team has just registered an application in Azure AD</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_00-23-54-5061943f57cc304e9c338132384dfb9e.PNG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_00-23-54-5061943f57cc304e9c338132384dfb9e.PNG\" alt=\"\" loading=\"eager\"></div></span><p>They want to create a specific application role.</p><p>Where would they configure the new application role?</p>",
+    "answers": [
+      { "answer": "Under Manage-&gt;App Roles", "correct": true },
+      { "answer": "Under Manage-&gt;Token configuration", "correct": false },
+      { "answer": "Under Manage-&gt;API permissions", "correct": false },
+      { "answer": "Under Manage-&gt;Authentication", "correct": false }
+    ],
+    "explanation": "<p> You can configure Application Roles under the Manager section and App Roles. </p>"
+  },
+  {
+    "question": "<p> You are implementing conditional access policies. You must evaluate the existing Azure Active Directory (Azure AD) risk events and risk levels to configure and implement the policies. You need to identify the risk level of the following risk events: Users with leaked credentials Impossible travel to atypical locations Sign-ins from IP addresses with suspicious activity Which level should you identify for each risk event? </p><p><br></p>",
+    "answers": [
+      { "answer": "Users with leaked credentials: Medium", "correct": false },
+      {
+        "answer": "Sign-ins from IP addresses with suspicious activity: Low",
+        "correct": true
+      },
+      {
+        "answer": "Impossible travel to atypical locations: Medium",
+        "correct": true
+      },
+      { "answer": "Users with leaked credentials: High", "correct": true }
+    ],
+    "explanation": "<p> https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview </p>"
+  },
+  {
+    "question": "<p> You have an Azure Active Directory (Azure AD) tenant that contains the users shown in the following table. </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_20-39-25-42f2e3defa6ca0b8cb9d6abb3d45c75f.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_20-39-25-42f2e3defa6ca0b8cb9d6abb3d45c75f.JPG\" alt=\"\" loading=\"eager\"></div></span><p> From Azure AD Privileged Identity Management (PIM), you configure the settings for the Security Administrator role as shown in the following exhibit. </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_20-39-25-a54104aabaf3b2479015746b4de887ce.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_20-39-25-a54104aabaf3b2479015746b4de887ce.JPG\" alt=\"\" loading=\"eager\"></div></span><p> From PIM, you assign the Security Administrator role to the following groups: </p><p>• Group1: Active assignment type, permanently assigned</p><p>• Group2: Eligible assignment type, permanently eligible</p><p> For each of the following statements, select Yes if the statement is true. Otherwise, select No. </p><p>NOTE: Each correct selection is worth one point.</p><p>Hot Area:</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_20-39-25-7d6dfd30aa00794dcebd07a241bae31c.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_20-39-25-7d6dfd30aa00794dcebd07a241bae31c.JPG\" alt=\"\" loading=\"eager\"></div></span><p><br></p><p><br></p>",
+    "answers": [
+      {
+        "answer": "User1 can only activate the Security Administrator role in five hours.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; YES If User2 activates the Security Administrator role&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; YESthe user will be assigned the role immediately. User3 can activate the Security Administrator role.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NO",
+        "correct": false
+      },
+      {
+        "answer": "User1 can only activate the Security Administrator role in five hours.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NO If User2 activates the Security Administrator role&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; YESthe user will be assigned the role immediately. User3 can activate the Security Administrator role.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NO",
+        "correct": true
+      },
+      {
+        "answer": "User1 can only activate the Security Administrator role in five hours.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NO If User2 activates the Security Administrator role&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; YESthe user will be assigned the role immediately. User3 can activate the Security Administrator role.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;YES",
+        "correct": false
+      }
+    ],
+    "explanation": "<p>Box 1: No -</p><p> User1 is a member of Group1. Group1: Active assignment type, permanently assigned.(User1 can activate the role in 5 hours does not make sense. The role is already active. ) </p><p>Box 2: Yes -</p><p> Active Type: A role assignment that doesn't require a user to perform any action to use the role. Users assigned as active have the privileges assigned to the role( User2 can activate the role and no approval is needed. Will have to just fill in the reason box. ) </p><p>Box 3: No -</p><p> User3 is member of Group1 and Group2.(User3 is part of group1 and the role is already active. No activation required.) </p><p>Group1: Active assignment type, permanently assigned</p><p>Group2: Eligible assignment type, permanently eligible</p><p>Reference:</p><p> https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure https://docs.microsoft.com/bs-cyrl-ba/azure/active-directory/privileged-identity-management/pim-resource-roles-configure-role-settings </p>"
+  },
+  {
+    "question": "<p> You have an Azure subscription that contains a virtual machine named VM1. </p><p> You create an Azure key vault that has the following configurations: </p><p>• Name: Vault5</p><p>• Region: West US</p><p>• Resource group: RG1</p><p> You need to use Vault5 to enable Azure Disk Encryption on VM1. The solution must support backing up VM1 by using Azure Backup. </p><p>Which key vault settings should you configure?</p>",
+    "answers": [
+      { "answer": "Secrets", "correct": false },
+      { "answer": "Locks", "correct": false },
+      { "answer": "Azure Blueprint", "correct": false },
+      { "answer": "Access policies", "correct": true },
+      { "answer": "Keys", "correct": false }
+    ],
+    "explanation": "<p>Create KV, Set Access Policy (advance), use the KV for VM</p><p>Reference:</p><p> https://docs.microsoft.com/en-us/azure/key-vault/key-vault-secure-your-key-vault </p>"
+  },
+  {
+    "question": "<p>Your company has created the following custom RBAC role</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_09-58-56-bc7168da58be46599a4dcf6c9f80ceaa.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_09-58-56-bc7168da58be46599a4dcf6c9f80ceaa.JPG\" alt=\"\" loading=\"eager\"></div></span><p>This role is assigned to a user as shown below</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_09-58-56-6a791e84a07c54e608b4743e340a8263.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_09-58-56-6a791e84a07c54e608b4743e340a8263.JPG\" alt=\"\" loading=\"eager\"></div></span><p> Would appuserB be able to create a new virtual machine in the app-grp resource group? </p><p><br></p>",
+    "answers": [
+      { "answer": "No", "correct": true },
+      { "answer": "Yes", "correct": false }
+    ],
+    "explanation": "<p> For the creation of the virtual machine, the user also needs other permissions such as working with virtual networks, disks etc. </p>"
+  },
+  {
+    "question": "<p> Your company’s development team is developing a .NET Core application. The application needs to access an Azure storage account. It needs to be able to read and write blobs onto the Azure storage account. </p><p> Which of the following would you configure in Azure Active Directory for this requirement? </p>",
+    "answers": [
+      { "answer": "Register an application", "correct": true },
+      {
+        "answer": "Configuring&nbsp; Microsoft Azure Blob Storage",
+        "correct": false
+      },
+      { "answer": "Register a new external Identities", "correct": false },
+      { "answer": "Configure a custom domain", "correct": false }
+    ],
+    "explanation": "<p> Here you need to register an application that can be used by the application itself. The details of the application object can be used to access resources in Azure. </p>"
+  },
+  {
+    "question": "<p>Your company has the following Azure resources</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-51-43-ec80130fb29d61864d4c9fa15dc3d419.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-51-43-ec80130fb29d61864d4c9fa15dc3d419.JPG\" alt=\"\" loading=\"eager\"></div></span><p> Can they enable threat protection via Microsoft Defender for cloud for appvm? </p>",
+    "answers": [
+      { "answer": "No", "correct": false },
+      { "answer": "Yes", "correct": true }
+    ],
+    "explanation": "<p>Yes, this plan comes as part of Microsoft Defender for servers</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_06-51-44-35cf2cde2197523c14aa81db253ae3f6.JPG\">"
+  },
+  {
+    "question": "<p> Your network contains an Active Directory forest named bankofamerica.com The forest contains a single domain. You have an Azure subscription named Sub1 that is associated to an Azure Active Directory (Azure AD) tenant named bankofamerica.com You plan to deploy Azure AD Connect and to integrate Active Directory and the Azure AD tenant. You need to recommend an integration solution that meets the following requirements: Ensures that password policies and user logon restrictions apply to user accounts that are synced to the tenant Minimizes the number of servers required for the solution. Which authentication method should you include in the recommendation? </p><p><br></p><p><br></p><p><br></p>",
+    "answers": [
+      {
+        "answer": "password hash synchronization with seamless single sign-on (SSO)",
+        "correct": false
+      },
+      {
+        "answer": "federated identity with Active Directory Federation Services (AD FS)",
+        "correct": false
+      },
+      {
+        "answer": "pass-through authentication with seamless single sign-on (SSO)",
+        "correct": true
+      }
+    ],
+    "explanation": "<p> Reading the Link in the solution, it Clearly states PTA as the Answer so this really needs to be changed \"Pass-through Authentication allows your users to sign in to both on-premises and cloud-based applications using the same passwords. This feature is an alternative to Azure AD Password Hash Synchronization, which provides the same benefit of cloud authentication to organizations. However, certain organizations wanting to enforce their on-premises Active Directory security and password policies, can choose to use Pass-through Authentication instead.\" the question states; </p><p><br></p><p> You need to recommend an integration solution that meets the following requirements: </p><p> • Ensures that password policies and user logon restrictions apply to user accounts that are synced to the tenant </p><p>• Minimizes the number of servers required for the solution.</p><p><br></p><p> PTA allows for the first requirement and Needs just a lightweight agent to be installed on-premises. caters for the second requirement </p><p><br></p><p>Reference:</p><p> https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-pta https://www.itpromentor.com/compare-sso/ </p>"
+  },
+  {
+    "question": "<p> You make use of Azure Resource Manager templates to deploy Azure virtual machines. </p><p> You have been tasked with making sure that Windows features that are not in use, are automatically inactivated when instances of the virtual machines are provisioned. </p><p>Which of the following actions should you take?</p>",
+    "answers": [
+      {
+        "answer": "You should make use of Azure Blueprints.",
+        "correct": false
+      },
+      {
+        "answer": "You should make use of network security groups (NSG).",
+        "correct": false
+      },
+      { "answer": "You should make use of Azure DevOps", "correct": false },
+      {
+        "answer": "You should make use of Azure Automation State Configuration.",
+        "correct": true
+      }
+    ],
+    "explanation": "<p> You can use Azure Automation State Configuration to manage Azure VMs (both Classic and Resource Manager), on-premises VMs, Linux machines, AWS VMs, and on-premises physical machines.<br>Note: Azure Automation State Configuration provides a DSC pull server similar to the Windows Feature DSC-Service so that target nodes automatically receive configurations, conform to the desired state, and report back on their compliance. The built-in pull server in Azure Automation eliminates the need to set up and maintain your own pull server. Azure Automation can target virtual or physical Windows or Linux machines, in the cloud or on-premises. </p><p><br>Reference:<br>https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started </p>"
+  },
+  {
+    "question": "<p> Your company has just setup an Azure subscription and an Azure AD tenant. The company wants to ensure that Azure virtual machines launched as part of the subscription are located in the North Europe location. Also, the virtual machines should not make use of unmanaged disks. Which of the following can be used for this requirement? </p><p><br></p>",
+    "answers": [
+      { "answer": "Azure Advisor", "correct": false },
+      { "answer": "Azure Policy", "correct": true },
+      { "answer": "blueprint", "correct": false },
+      { "answer": "Microsoft Sentinel", "correct": false },
+      { "answer": "Microsoft Defender for Cloud", "correct": false },
+      { "answer": "Application Security Groups", "correct": false }
+    ],
+    "explanation": "<p> You can use Azure Policy to ensure these governance requirements are met. </p>"
+  },
+  {
+    "question": "<p> Your company is using Microsoft Defender for Cloud. They want to have an automated workflow in place that would help to remediate a security vulnerability. Which of the following could be used for this requirement?<br></p>",
+    "answers": [
+      { "answer": "Azure Logic Apps", "correct": true },
+      { "answer": "Azure Virtual Machines", "correct": false },
+      { "answer": "Azure SQL databases", "correct": false },
+      { "answer": "Azure Function App", "correct": false }
+    ],
+    "explanation": "<p> You can remediate vulnerabilities via an Automated workflow via the use of Azure Logic Apps. For more information on the workflow automation, one can visit the below URL - https://docs.microsoft.com/en-us/azure/defender-for-cloud/workflow-automation </p>"
+  },
+  {
+    "question": "<p> Your team has the following resources in place as part of an Azure subscription </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_00-50-49-8f554864d7605c85655df8df409abdb4.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_00-50-49-8f554864d7605c85655df8df409abdb4.JPG\" alt=\"\" loading=\"eager\"></div></span><p>The following disk is assigned to the Azure virtual machine</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_00-50-50-7aeb0c518a963ad25bd52e092874362a.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_00-50-50-7aeb0c518a963ad25bd52e092874362a.JPG\" alt=\"\" loading=\"eager\"></div></span><p> You need to enable Azure Disk Encryption for the disk attached to the virtual machine </p><p> Which of the following steps must you implement for this requirement? Choose 3 answers from the options given below </p><p><br></p>",
+    "answers": [
+      { "answer": "Create a certificate in the key vault", "correct": false },
+      { "answer": "Create a secret in the key vault", "correct": false },
+      { "answer": "Modify the Key Vault Access policy", "correct": true },
+      {
+        "answer": "Run the Set-AzVMDiskEncryptionExtension cmdlet",
+        "correct": true
+      },
+      { "answer": "Create an Azure Key vault", "correct": true }
+    ],
+    "explanation": "<p> First you need to create the key vault resource for Azure Disk Encryption </p><p> For the key vault, you need to enable the setting of “Azure Disk Encryption for volume encryption” </p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_00-50-50-0425aa9c5d249512a4388eb8d69cf4c3.JPG\"><p> You can then set Azure Disk Encryption with the use of the PowerShell command Set-AzVMDiskEncryptionExtension </p><p> For more information on Azure Disk Encryption , one can visit the below URL </p><p> https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disk-encryption-windows </p>"
+  },
+  {
+    "question": "<p>Your company has the following Azure virtual machine</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_19-08-15-2f1558ff2d5f21e356d3044d5b46488b.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_19-08-15-2f1558ff2d5f21e356d3044d5b46488b.JPG\" alt=\"\" loading=\"eager\"></div></span><p>They also have the following Azure Key vaults</p><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_19-08-16-ab1a345b073b7921317b7ded700b4da9.JPG\" style=\"display: none\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"downloaded_images/Azure_AZ500_03/2022-09-02_19-08-16-ab1a345b073b7921317b7ded700b4da9.JPG\" alt=\"\" loading=\"eager\"></div></span><p>Can appvm make use of appvault2000 for Disk Encryption?</p>",
+    "answers": [
+      { "answer": "No", "correct": false },
+      { "answer": "Yes", "correct": true }
+    ],
+    "explanation": "<p><br></p><p> Yes. The Azure virtual machine and Azure Key vault resource need to be in the same location. </p>"
+  },
+  {
+    "question": "<p> Your company has a set of Azure virtual machines that are part of an Azure virtual network. The company wants to ensure that all network traffic in the Azure virtual network is routed via a particular Azure virtual machine named centralvm. Which of the following should be configured for this requirement? </p>",
+    "answers": [
+      { "answer": "An Azure Firewall resource", "correct": false },
+      { "answer": "A network security group", "correct": false },
+      { "answer": "A user-defined route", "correct": true },
+      { "answer": "An application security group", "correct": false }
+    ],
+    "explanation": "<p> The user defined route can be used to ensure that all traffic is routed via that Azure virtual machine. </p>"
+  },
+  {
+    "question": "<p> Your company has an Active Directory forest with a single domain, named weylandindustries.com. They also have an Azure Active Directory (Azure AD) tenant with the same name. </p><p> After syncing all on-premises identities to Azure AD, you are informed that users with a givenName attribute starting with LAB should not be allowed to sync to </p><p>Azure AD.</p><p>Which of the following actions should you take?<br></p>",
+    "answers": [
+      {
+        "answer": "You should make use of the Synchronization Rules Editor to create an attribute-based filtering rule.",
+        "correct": true
+      },
+      {
+        "answer": "You should configure a DNAT rule on the Firewall.",
+        "correct": false
+      },
+      {
+        "answer": "You should make use of Active Directory Users and Computers to create an attribute-based filtering rule.",
+        "correct": false
+      },
+      {
+        "answer": "You should configure a network traffic filtering rule on the Firewall.",
+        "correct": false
+      }
+    ],
+    "explanation": "<p> Use the Synchronization Rules Editor and write attribute-based filtering rule. </p><p><br>Reference:<br>https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-change-the-configuration </p>"
+  },
+  {
+    "question": "<p> Your company has an Azure virtual machine. They want to enable Just-In-Time VM access to grant PowerShell access to the virtual machines. </p><p> You have to ensure the right role is created and assigned to users who need to request Just-In-Time VM access to the machine. </p><p> Which of the following would assign at the scope of the virtual machine? </p>",
+    "answers": [
+      {
+        "answer": "Microsoft.Compute/virtualMachines/update",
+        "correct": false
+      },
+      { "answer": "Microsoft.Compute/virtualMachines/write", "correct": false },
+      { "answer": "Microsoft.Compute/virtualMachines/read", "correct": true }
+    ],
+    "explanation": "<p> One of the permissions that needs to be assigned to the role assigned to users is to be able to read the details of the virtual machine. </p><p> For more information on Just-In-Time VM Access, one can visit the below URL </p><p> https://docs.microsoft.com/en-us/azure/security-center/just-in-time-explained </p>"
+  },
+  {
+    "question": "<p> Your network contains an Active Directory forest named contoso.com. You have an Azure Active Directory (Azure AD) tenant named innovation.com. You plan to configure synchronization by using the Express Settings installation option in Azure AD Connect. You need to identify which roles and groups are required to perform the planned configuration. The solution must use the principle of least privilege. Which two roles and groups should you identify? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point. </p><p><br></p>",
+    "answers": [
+      {
+        "answer": "the Domain Admins group in Active Directory",
+        "correct": false
+      },
+      {
+        "answer": "the Global administrator role in Azure AD",
+        "correct": true
+      },
+      {
+        "answer": "the Enterprise Admins group in Active Directory",
+        "correct": true
+      },
+      { "answer": "the User administrator role in Azure AD", "correct": false },
+      {
+        "answer": "the Security administrator role in Azure AD",
+        "correct": false
+      }
+    ],
+    "explanation": "<p> In Express settings, the installation wizard asks for the following: </p><p>AD DS Enterprise Administrator credentials</p><p>Azure AD Global Administrator credentials</p><p><br></p><p> Reference: https://docs.microsoft.com/en-us/azure/active-directory/hybrid/reference-connect-accounts-permissions </p>"
+  },
+  {
+    "question": "<p> Your team needs to develop an Azure Function that will be used to create an Azure storage account. Permissions must be given to the Azure Function for this requirement. You need to grant the required privileges with the least amount of administrative overhead. </p><p>Which of the following would you create/use for this requirement?</p>",
+    "answers": [
+      { "answer": "Use an inbuilt Azure AD role", "correct": false },
+      { "answer": "Create a custom Azure AD role", "correct": false },
+      { "answer": "Create a custom RBAC role", "correct": true },
+      { "answer": "Use an inbuilt RBAC role", "correct": false }
+    ],
+    "explanation": "<p> Here we need to create Azure resources , hence we need to make use of an RBAC role. Here since we just need to create an Azure storage account, we should consider creating an RBAC role. </p>"
+  },
+  {
+    "question": "<p> Your company is developing an application. This is a service that will run on an Azure virtual machine based on Windows Server 2019 operating system. The application would need to read data from the Azure AD tenant via the use of the Microsoft Graph service. </p><p> You need to ensure the right steps are taken in Azure AD to ensure the application has the right permissions to access the Microsoft Graph service. Which of the following needs to be configured for this requirement? </p><p><br></p>",
+    "answers": [
+      { "answer": "Configure an application permission", "correct": true },
+      { "answer": "Configure a delegated permission", "correct": false },
+      { "answer": "Create an application object in Azure AD", "correct": true },
+      { "answer": "Grant the required permission", "correct": true },
+      { "answer": "Create an Administrative Unit", "correct": false }
+    ],
+    "explanation": "<p>Here we first need to create an application object in Azure AD</p><p> Then we need to configure an application-level permission since the application is going to be running as a service on a server. </p><p> And then we grant the required permissions and also grant admin consent for the application object. </p>"
+  }
+]
