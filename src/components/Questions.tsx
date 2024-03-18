@@ -147,17 +147,20 @@ function Questions({ quiz }: { quiz: Iquiz }) {
   );
 
   async function initQuiz() {
-    const questionRepository = new FileQuestionRepository()
+    const questionRepository = new FileQuestionRepository();
     const questionService = new QuestionServices(questionRepository);
     let data: SetStateAction<Question[]> = [];
-    if (quiz.file === "random") { 
-       data = await questionService.fetchRandomQuestions();
+    if (quiz.file === "random") {
+      data = await questionService.fetchRandomQuestions();
     }
     if (quiz.type === "C01") {
-       data = await questionService.fetchInitQuestions(quiz.file)
+      data = await questionService.fetchInitQuestions(quiz.file);
     }
     if (quiz.type === "C02") {
-      data = await questionService.fetchQuestionsC02(quiz.file)
+      data = await questionService.fetchQuestionsC02(quiz.file);
+    }
+    if (quiz.type === "AZ") {
+      data = await questionService.fetchQuestionsAzure(quiz.file);
     }
     setQuestions(data);
     handleChangePage(1);

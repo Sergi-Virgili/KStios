@@ -77,6 +77,16 @@ const QuizList = [
 ];
 
 export class FileQuestionRepository implements QuestionRepository {
+  public fetchQuestionsAzure = async (file: string): Promise<Question[]> => {
+    const questions: Question[] = [];
+    await fetch(file)
+      .then((res) => res.text())
+      .then((content) => {
+        this.convertToDomain(JSON.parse(content), questions);
+      });
+    return questions;
+  };
+
   private fetchInitialQuestions = (file?: string) =>
     fetch(file || "/data/data.txt")
       .then((res) => res.text())
@@ -131,8 +141,8 @@ export class FileQuestionRepository implements QuestionRepository {
       question: string;
       answers: { answer: string; correct: boolean }[];
       explanation: string;
-      incorrect: string;
-      references: string;
+      incorrect?: string;
+      references?: string;
     }[],
     questions: Question[]
   ) {
@@ -149,5 +159,6 @@ export class FileQuestionRepository implements QuestionRepository {
         )
       );
     });
+    return questions;
   }
 }
