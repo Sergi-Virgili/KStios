@@ -77,6 +77,26 @@ const QuizList: Iquiz[] = [
     file: "./data/azure/az500_01.json",
     type: "AZ",
   },
+  {
+    title: "Azure AZ-500 - 2",
+    file: "./data/azure/Azure_AZ500_02.json",
+    type: "AZ",
+  },
+  {
+    title: "Azure AZ-500 - 3",
+    file: "./data/azure/Azure_AZ500_03.json",
+    type: "AZ",
+  },
+  {
+    title: "Azure AZ-500 - 4",
+    file: "./data/azure/Azure_AZ500_04.json",
+    type: "AZ",
+  },
+  {
+    title: "Azure AZ-500 - 5",
+    file: "./data/azure/Azure_AZ500_05.json",
+    type: "AZ",
+  },
 ];
 
 export default function QuizSelector({ changeQuiz }: { changeQuiz: any }) {
