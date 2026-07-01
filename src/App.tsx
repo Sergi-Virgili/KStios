@@ -45,7 +45,7 @@ function App() {
                 "bg-none  text-pink-700 text-2xl font-thin hover:cursor-pointer hover:text-pink-400"
               }
             >
-              Change Quiz
+              Change quiz
             </a>
           </header>
         ) : (

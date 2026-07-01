@@ -66,7 +66,7 @@ function Questions({ quiz }: { quiz: Iquiz }) {
       <Card className="p-0 mt-0 w-full min-h-screen">
         <header className="flex w-full rounded-2xl">
           <div className=" w-9/12  flex-column ">
-            <h1 className=" text-pink-600 font-bold text-3xl">Qyz</h1>
+            <h1 className=" text-pink-600 font-bold text-3xl">KStios</h1>
             <h1 className="font-bold text-xl">{quiz.title}</h1>
           </div>
           <div className=" md:flex  gap-5 mb-4 bg-cyan-950 rounded-2xl text-gray-100 w-3/12 p-2 md:p-5 justify-end ">
@@ -128,7 +128,7 @@ function Questions({ quiz }: { quiz: Iquiz }) {
           <div className="flex  items-center ">
             {!isQuizFinished ? (
               <Button color="pink" pill onClick={handlerFinishQuiz}>
-                Finish Quiz
+                Finish quiz
               </Button>
             ) : (
               <div className="flex justify-start bg-red-50 rounded-3xl">
@@ -136,7 +136,7 @@ function Questions({ quiz }: { quiz: Iquiz }) {
                   {percent.toFixed(2)} %
                 </p>
                 <Button pill color="pink" onClick={initQuiz}>
-                  Restart Quiz
+                  Restart quiz
                 </Button>
               </div>
             )}

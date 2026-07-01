@@ -51,7 +51,7 @@ function QuestionCard(props: Props) {
         {!props.actualQuestion.isSubmitted ? (
           <>
             <Button pill onClick={props.handleSubmit}>
-              Envíame
+              Check answer
             </Button>
           </>
         ) : (
@@ -60,7 +60,7 @@ function QuestionCard(props: Props) {
             color="pink"
             onClick={() => setExplainActive(!explainActive)}
           >
-            {!explainActive ? <>Explícame</> : <>Ocultame</>}
+            {!explainActive ? <>Show explanation</> : <>Hide explanation</>}
           </Button>
         )}
         <Pagination

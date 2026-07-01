@@ -40,11 +40,6 @@ const QuizList = [
     type: "C01",
   },
   {
-    title: "AWS Cloud Practitioner 6",
-    file: "./data/data6.txt",
-    type: "C01",
-  },
-  {
     title: "AWS Cloud Practitioner C02 - 1",
     file: "./data/C02/data1.txt",
     type: "C02",

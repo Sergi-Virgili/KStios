@@ -38,11 +38,6 @@ const QuizList: Iquiz[] = [
     type: "C01",
   },
   {
-    title: "AWS Cloud Practitioner 6",
-    file: "./data/data6.txt",
-    type: "C01",
-  },
-  {
     title: "AWS Cloud Practitioner C02 - 1",
     file: "./data/C02/data1.txt",
     type: "C02",
@@ -105,17 +100,15 @@ export default function QuizSelector({ changeQuiz }: { changeQuiz: any }) {
       <Card className="h-fit self-center">
         <div className="grid sm:w-full  md:grid-cols-3 gap-8 m-0 ">
           {QuizList.map((quiz, index) => (
-            <>
-              <Button
-                key={quiz.title}
-                className=" bg-cyan-900 text-gray-100 font-bold rounded-2xl h-20 md:h-40  "
-                onClick={() => {
-                  changeQuiz(QuizList[index]);
-                }}
-              >
-                {quiz.title}
-              </Button>
-            </>
+            <Button
+              key={quiz.title}
+              className=" bg-cyan-900 text-gray-100 font-bold rounded-2xl h-20 md:h-40  "
+              onClick={() => {
+                changeQuiz(QuizList[index]);
+              }}
+            >
+              {quiz.title}
+            </Button>
           ))}
         </div>
       </Card>
