@@ -1,5 +1,8 @@
-import { Button, Card } from "flowbite-react";
 import { Iquiz } from "../App";
+import Hero from "./ui/Hero";
+import PageShell from "./ui/PageShell";
+import QuizButton from "./ui/QuizButton";
+import SectionCard from "./ui/SectionCard";
 
 const quizList: Iquiz[] = [
   {
@@ -112,39 +115,31 @@ const quizGroups = [
   },
 ];
 
-export default function QuizSelector({ changeQuiz }: { changeQuiz: any }) {
+const cloudCount = new Set(
+  quizList
+    .filter((quiz) => quiz.type !== "random")
+    .map((quiz) => (quiz.type === "AZ" ? "Azure" : "AWS"))
+).size;
+
+const randomQuestionCount = 65;
+
+export default function QuizSelector({
+  changeQuiz,
+}: {
+  changeQuiz: (quiz: Iquiz) => void;
+}) {
   return (
-    <main className="min-h-screen px-4 py-8 md:px-6 md:py-12">
-      <section className="mb-8 rounded-[2rem] bg-gradient-to-br from-cyan-950 via-slate-900 to-pink-950 px-6 py-10 text-white shadow-2xl md:px-10">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-200">
-          Cloud certification trainer
-        </p>
-        <div className="grid gap-8 md:grid-cols-[1.5fr_1fr] md:items-end">
-          <div>
-            <h1 className="mb-4 text-4xl font-black tracking-tight md:text-6xl">
-              KStios
-            </h1>
-            <p className="max-w-2xl text-lg leading-8 text-slate-200">
-              Practice AWS and Azure certification questions, review corrections,
-              and build exam confidence with focused quiz sessions.
-            </p>
-          </div>
-          <dl className="grid grid-cols-3 gap-3 text-center">
-            <div className="rounded-2xl bg-white/10 p-4 backdrop-blur">
-              <dt className="text-2xl font-black">18</dt>
-              <dd className="text-xs text-slate-300">quiz sets</dd>
-            </div>
-            <div className="rounded-2xl bg-white/10 p-4 backdrop-blur">
-              <dt className="text-2xl font-black">2</dt>
-              <dd className="text-xs text-slate-300">clouds</dd>
-            </div>
-            <div className="rounded-2xl bg-white/10 p-4 backdrop-blur">
-              <dt className="text-2xl font-black">65</dt>
-              <dd className="text-xs text-slate-300">random Qs</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
+    <PageShell>
+      <Hero
+        eyebrow="Cloud certification trainer"
+        title="KStios"
+        description="Practice AWS and Azure certification questions, review corrections, and build exam confidence with focused quiz sessions."
+        stats={[
+          { value: quizList.length, label: "quiz sets" },
+          { value: cloudCount, label: "clouds" },
+          { value: randomQuestionCount, label: "random Qs" },
+        ]}
+      />
 
       <div className="space-y-6">
         {quizGroups.map((group) => {
@@ -153,43 +148,27 @@ export default function QuizSelector({ changeQuiz }: { changeQuiz: any }) {
           );
 
           return (
-            <Card key={group.title} className="overflow-hidden border-0 shadow-lg">
-              <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-                <div>
-                  <h2 className="text-2xl font-black text-slate-900">
-                    {group.title}
-                  </h2>
-                  <p className="mt-1 text-sm text-slate-500">
-                    {group.description}
-                  </p>
-                </div>
-                <span className="w-fit rounded-full bg-cyan-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-cyan-900">
-                  {groupQuizzes.length} {groupQuizzes.length === 1 ? "option" : "options"}
-                </span>
-              </div>
-
+            <SectionCard
+              key={group.title}
+              title={group.title}
+              description={group.description}
+              meta={`${groupQuizzes.length} ${
+                groupQuizzes.length === 1 ? "option" : "options"
+              }`}
+            >
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {groupQuizzes.map((quiz) => (
-                  <Button
+                  <QuizButton
                     key={quiz.title}
-                    className="min-h-20 justify-start rounded-2xl bg-cyan-950 text-left text-gray-100 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-pink-700 hover:shadow-xl focus:ring-pink-300"
-                    onClick={() => changeQuiz(quiz)}
-                  >
-                    <span className="block w-full">
-                      <span className="block text-base font-bold">
-                        {quiz.title}
-                      </span>
-                      <span className="mt-1 block text-xs font-medium text-cyan-100">
-                        Start practice session
-                      </span>
-                    </span>
-                  </Button>
+                    quiz={quiz}
+                    onSelect={changeQuiz}
+                  />
                 ))}
               </div>
-            </Card>
+            </SectionCard>
           );
         })}
       </div>
-    </main>
+    </PageShell>
   );
 }

@@ -29,31 +29,29 @@ function QuestionCard(props: Props) {
     <article className="min-w-full">
       {/* {resultAvise()} */}
 
-      <p className=" text-gray-700 dark:text-gray-400 mb-5">
+      <p className="mb-6 text-xl font-semibold leading-8 text-slate-800">
         {parse(props.actualQuestion.question)}{" "}
         {/* {props.actualQuestion.numberOfCorrectAnswers()} */}
       </p>
-      <ul>
+      <ul className="space-y-3">
         {props.actualQuestion.answers.map((x: Answer, index: number) => (
           <li key={index}>
             <Card
               onClick={() => props.handleCheck(x)}
-              className={` rounded-3xl w-full my-3 min-h-20 p-2 ${props.answerStyle(
+              className={`w-full rounded-3xl transition-all ${props.answerStyle(
                 x
               )}`}
             >
-              <p>{x.answer}</p>
+              <p className="text-base font-medium leading-7">{x.answer}</p>
             </Card>
           </li>
         ))}
       </ul>
-      <section className="flex justify-between items-center">
+      <section className="mt-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         {!props.actualQuestion.isSubmitted ? (
-          <>
-            <Button pill onClick={props.handleSubmit}>
-              Check answer
-            </Button>
-          </>
+          <Button pill className="bg-brand-700 hover:bg-brand-900" onClick={props.handleSubmit}>
+            Check answer
+          </Button>
         ) : (
           <Button
             pill
@@ -64,7 +62,7 @@ function QuestionCard(props: Props) {
           </Button>
         )}
         <Pagination
-          className="mb-2 p-0"
+          className="p-0"
           layout="navigation"
           currentPage={props.questionNumber + 1}
           onPageChange={(page) => {
